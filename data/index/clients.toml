@@ -1,0 +1,22 @@
++++
+weight = 80
+lastmod = "2017-09-04"
+date = "2017-09-04"
+title = "Built with"
+
+[style]
+  center = true
+
+[[clients]]
+  name = "hugo"
+  weight = 10
+  logo = "hugo.svg"
+[[clients]]
+  name = "caddy"
+  weight = 20
+  logo = "caddy.svg"
+[[clients]]
+  name = "go"
+  weight = 30
+  logo = "go.svg"
++++

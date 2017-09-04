@@ -1,0 +1,13 @@
++++
+title = """
+Hosted Service  
+*coming soon*
+"""
+weight = 20
+lastmod = "2017-09-04"
+date = "2017-09-04"
+icon = "fa-gears"
+content = """
+Let us provide the backend infrastructure for your redirects while managing and controlling your redirect data within your DNS records.
+"""
++++

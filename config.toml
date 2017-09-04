@@ -1,0 +1,46 @@
+# Site settings
+baseurl = "https://about.txtdirect.org/"
+languageCode = "en-us"
+title = "txtdirect - DNS TXT-record based redirects"
+theme = "hugo-agency-theme"
+version = "0.0.1"
+copyright = "Copyright 2017 SeeTheProgress"
+
+DefaultContentLanguage = "en"
+
+[params]
+  # Author data
+  name = "txtdirect"
+  description = "DNS TXT record based redirects"
+
+  # Link custom assets relative to /static
+  custom_css = ["agency_overwrite.css"]
+  disableFonts = true
+
+  # Navigation
+  [params.navigation]
+    logo = "logo.svg"
+
+  [[menu.main]]
+    url = "#services"
+    name = "Features"
+    weight = 10
+
+  [[menu.postpend]]
+    url = "https://github.com/txtdirect/txtdirect/"
+    name = "Github"
+    weight = 10
+
+  # Footer
+  [params.footer]
+    enable = true
+
+  [[menu.footer]]
+    weight = 10
+    name = "About us"
+    url = "/about"
+
+  [params.analytics.piwik]
+    URL = "https://stats.seetheprogress.eu"
+    ID = "12"
+    domain = "about.txtdirect.org"

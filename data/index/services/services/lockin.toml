@@ -1,0 +1,11 @@
++++
+title = "No Vendor Lock-in"
+weight = 10
+lastmod = "2017-09-04"
+date = "2017-09-04"
+icon = "fa-unlock-alt"
+content = """
+Easily switch to other providers or host the redirect engine yourself.
+Redirect data is stored within your own DNS records. 
+"""
++++
