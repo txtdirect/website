@@ -32,4 +32,5 @@ build pages:about for production:
     - master
   script:
   - git clone -b dev $THEME_REPO themes/$THEME
+  - docker run -u $(id -u):$(id -g) -v $(pwd):/source $HUGO_CONTAINER /hugo -s /source
   - netlify deploy -p public -s $SITE -t $TOKEN
