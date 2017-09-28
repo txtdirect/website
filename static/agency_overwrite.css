@@ -14,15 +14,15 @@ a:hover,
 a:focus,
 a:active,
 a.active {
-    color: #bc4b00;
+    color: #71bc00;
 }
 
 .bg-light-gray {
-    background-color: #cce2f1;
+    background-color: #b2d4ea;
 }
 
 .bg-darkest-gray {
-    background-color: #bc4b00;
+    background-color: #71bc00;
 }
 
 .btn-primary {
@@ -72,8 +72,8 @@ fieldset[disabled] .btn-primary.active {
 .btn-xl:active,
 .btn-xl.active,
 .open .dropdown-toggle.btn-xl {
-    border-color: #bc4b00;
-    background-color: #bc4b00;
+    border-color: #71bc00;
+    background-color: #71bc00;
 }
 
 .btn-xl.disabled,
@@ -106,7 +106,7 @@ fieldset[disabled] .btn-xl.active {
 
 .navbar-default .navbar-brand:hover {
     color: #000b12;
-    background-color: #bc4b00;
+    background-color: #71bc00;
 }
 
 .navbar-default .navbar-brand:focus,
@@ -132,17 +132,17 @@ fieldset[disabled] .btn-xl.active {
 .navbar-default .nav li a:hover,
 .navbar-default .nav li a:focus {
     color: #000b12;
-    background-color: #bc4b00;
+    background-color: #71bc00;
 }
 
 .navbar-default .navbar-nav>.active>a {
-    background-color: #bc4b00;
+    background-color: #71bc00;
     border-radius: 0px;
 }
 
 .navbar-default .navbar-nav>.active>a:hover,
 .navbar-default .navbar-nav>.active>a:focus {
-    background-color: #bc4b00;
+    background-color: #71bc00;
 }
 
 @media(min-width:768px) {
