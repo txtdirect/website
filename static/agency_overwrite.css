@@ -100,7 +100,8 @@ fieldset[disabled] .btn-xl.active {
 }
 
 .navbar-default {
-    background-color: #e5f0f8;
+    background-color: #cce2f1;
+    color: #000b12;
 }
 
 .navbar-default .navbar-brand {
