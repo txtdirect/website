@@ -99,20 +99,24 @@ fieldset[disabled] .btn-xl.active {
     color: #0071bc;
 }
 
+.navbar-default {
+    background-color: #e5f0f8;
+}
+
 .navbar-default .navbar-brand {
     font-family: "Helvetica Neue",Helvetica,Arial,cursive;
-    color: #e5f0f8;
+    color: #000b12;
 }
 
 .navbar-default .navbar-brand:hover {
-    color: #e5f0f8;
+    color: #000b12;
     background-color: #71bc00;
 }
 
 .navbar-default .navbar-brand:focus,
 .navbar-default .navbar-brand:active,
 .navbar-default .navbar-brand.active {
-    color: #e5f0f8;
+    color: #000b12;
 }
 
 .navbar-default .navbar-toggle {
@@ -131,7 +135,7 @@ fieldset[disabled] .btn-xl.active {
 
 .navbar-default .nav li a:hover,
 .navbar-default .nav li a:focus {
-    color: #e5f0f8;
+    color: #000b12;
     background-color: #71bc00;
 }
 
