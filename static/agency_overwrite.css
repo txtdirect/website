@@ -3,31 +3,31 @@
 }
 
 .text-primary {
-    color: #388E3C;
+    color: #0071bc;
 }
 
 a {
-    color: #4CAF50;
+    color: #0071bc;
 }
 
 a:hover,
 a:focus,
 a:active,
 a.active {
-    color: #536DFE;
+    color: #bc4b00;
 }
 
 .bg-light-gray {
-    background-color: #C8E6C9;
+    background-color: #cce2f1;
 }
 
 .bg-darkest-gray {
-    background-color: #536DFE;
+    background-color: #bc4b00;
 }
 
 .btn-primary {
-    border-color: #4CAF50;
-    background-color: #4CAF50;
+    border-color: #0071bc;
+    background-color: #0071bc;
 }
 
 .btn-primary:hover,
@@ -35,8 +35,8 @@ a.active {
 .btn-primary:active,
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
-    border-color: #4CAF50;
-    background-color: #4CAF50;
+    border-color: #0071bc;
+    background-color: #0071bc;
 }
 
 .btn-primary.disabled,
@@ -54,17 +54,17 @@ fieldset[disabled] .btn-primary:active,
 .btn-primary.disabled.active,
 .btn-primary[disabled].active,
 fieldset[disabled] .btn-primary.active {
-    border-color: #4CAF50;
-    background-color: #4CAF50;
+    border-color: #0071bc;
+    background-color: #0071bc;
 }
 
 .btn-primary .badge {
-    color: #4CAF50;
+    color: #0071bc;
 }
 
 .btn-xl {
-    border-color: #4CAF50;
-    background-color: #4CAF50;
+    border-color: #0071bc;
+    background-color: #0071bc;
 }
 
 .btn-xl:hover,
@@ -72,8 +72,8 @@ fieldset[disabled] .btn-primary.active {
 .btn-xl:active,
 .btn-xl.active,
 .open .dropdown-toggle.btn-xl {
-    border-color: #536DFE;
-    background-color: #536DFE;
+    border-color: #bc4b00;
+    background-color: #bc4b00;
 }
 
 .btn-xl.disabled,
@@ -91,38 +91,38 @@ fieldset[disabled] .btn-xl:active,
 .btn-xl.disabled.active,
 .btn-xl[disabled].active,
 fieldset[disabled] .btn-xl.active {
-    border-color: #4CAF50;
-    background-color: #4CAF50;
+    border-color: #0071bc;
+    background-color: #0071bc;
 }
 
 .btn-xl .badge {
-    color: #4CAF50;
+    color: #0071bc;
 }
 
 .navbar-default .navbar-brand {
     font-family: "Helvetica Neue",Helvetica,Arial,cursive;
-    color: #fff;
+    color: #000b12;
 }
 
 .navbar-default .navbar-brand:hover {
-    color: #fff;
-    background-color: #536DFE;
+    color: #000b12;
+    background-color: #bc4b00;
 }
 
 .navbar-default .navbar-brand:focus,
 .navbar-default .navbar-brand:active,
 .navbar-default .navbar-brand.active {
-    color: #fff;
+    color: #000b12;
 }
 
 .navbar-default .navbar-toggle {
-    border-color: #4CAF50;
-    background-color: #4CAF50;
+    border-color: #0071bc;
+    background-color: #0071bc;
 }
 
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-    background-color: #4CAF50;
+    background-color: #0071bc;
 }
 
 .navbar-default .nav li a {
@@ -131,18 +131,18 @@ fieldset[disabled] .btn-xl.active {
 
 .navbar-default .nav li a:hover,
 .navbar-default .nav li a:focus {
-    color: #fff;
-    background-color: #536DFE;
+    color: #000b12;
+    background-color: #bc4b00;
 }
 
 .navbar-default .navbar-nav>.active>a {
-    background-color: #536DFE;
+    background-color: #bc4b00;
     border-radius: 0px;
 }
 
 .navbar-default .navbar-nav>.active>a:hover,
 .navbar-default .navbar-nav>.active>a:focus {
-    background-color: #536DFE;
+    background-color: #bc4b00;
 }
 
 @media(min-width:768px) {
@@ -181,21 +181,21 @@ section h3.section-subheading {
 }
 
 .timeline:before {
-    background-color: #f1f1f1;
+    background-color: #e5f0f8;
 }
 
 .timeline>li .timeline-image {
-    border: 7px solid #f1f1f1;
-    color: #fff;
-    background-color: #4CAF50;
+    border: 7px solid #e5f0f8;
+    color: #000b12;
+    background-color: #0071bc;
 }
 
 .team-member img {
-    border: 7px solid #fff;
+    border: 7px solid #000b12;
 }
 
 section#contact .form-control:focus {
-    border-color: #fff;
+    border-color: #000b12;
 }
 
 section#contact::-webkit-input-placeholder {
@@ -229,7 +229,7 @@ footer ul.quicklinks {
 ul.social-buttons li a:hover,
 ul.social-buttons li a:focus,
 ul.social-buttons li a:active {
-    background-color: #4CAF50;
+    background-color: #0071bc;
 }
 
 .portfolio-modal .modal-content p.item-intro {
@@ -238,14 +238,14 @@ ul.social-buttons li a:active {
 
 ::-moz-selection {
     text-shadow: none;
-    background: #4CAF50;
+    background: #0071bc;
 }
 
 ::selection {
     text-shadow: none;
-    background: #4CAF50;
+    background: #0071bc;
 }
 
 body {
-    webkit-tap-highlight-color: #4CAF50;
+    webkit-tap-highlight-color: #0071bc;
 }
