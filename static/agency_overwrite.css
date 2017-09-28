@@ -132,6 +132,7 @@ fieldset[disabled] .btn-xl.active {
 
 .navbar-default .nav li a {
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #000b12;
 }
 
 .navbar-default .nav li a:hover,
