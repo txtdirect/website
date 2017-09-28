@@ -104,6 +104,11 @@ fieldset[disabled] .btn-xl.active {
     color: #000b12;
 }
 
+.navbar-default.navbar-shrink {
+  background-color: #cce2f1;
+  color: #000b12;
+}
+
 .navbar-default .navbar-brand {
     font-family: "Helvetica Neue",Helvetica,Arial,cursive;
     color: #000b12;
