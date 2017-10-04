@@ -1,8 +1,15 @@
 +++
-weight = 10
-title = "DNS TXT-record based redirects"
-button = "Get more details"
-link = "#services"
-lastmod = "2017-09-04"
-date = "2017-09-04"
+fragment = "hero"
+#disabled = true
+date = "2017-10-04"
+lastmod = "2017-10-04"
+weight = 100
+particles = true
+
+title = "TXTdirect"
+subtitle = "DNS TXT-record based redirects"
+header = "header.jpg"
+logo = "logo.svg"
+button = "Details"
+link = "#details"
 +++

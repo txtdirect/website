@@ -5,8 +5,8 @@ services:
 
 variables:
   DOCKER_HOST: "tcp://localhost:2375"
-  THEME_REPO: "https://github.com/digitalcraftsman/hugo-agency-theme.git"
-  THEME: "hugo-agency-theme"
+  THEME_REPO: "https://github.com/okkur/syna.git"
+  THEME: "syna"
   HUGO_CONTAINER: "seetheprogress/hugo:v0.26-912faa"
 
 before_script:
@@ -19,7 +19,7 @@ build pages:about for development:
   only:
     - dev
   script:
-  - git clone -b dev $THEME_REPO themes/$THEME
+  - git clone -b master $THEME_REPO themes/$THEME
   - find . -name 'config.toml' -type f -exec sed -i -e 's/about.txtdirect.org/txtdirect-org-page-main-dev.netlify.com/g' -- {} +
   - find . -name 'config.toml' -type f -exec sed -i -e 's/stats.seetheprogress.eu/stats.example.com/g' -- {} +
   - docker run -u $(id -u):$(id -g) -v $(pwd):/source $HUGO_CONTAINER /hugo -s /source
@@ -31,6 +31,6 @@ build pages:about for production:
   only:
     - master
   script:
-  - git clone -b dev $THEME_REPO themes/$THEME
+  - git clone -b v0.1.0 $THEME_REPO themes/$THEME
   - docker run -u $(id -u):$(id -g) -v $(pwd):/source $HUGO_CONTAINER /hugo -s /source
   - netlify deploy -p public -s $SITE -t $TOKEN

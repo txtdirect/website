@@ -1,0 +1,39 @@
++++
+fragment = "column-items"
+#disabled = false
+date = "2017-10-04"
+lastmod = "2017-10-04"
+weight = 200
+background = "dark"
+selfLink = "features"
+
+title = "Features"
+subtitle= "Convenient and minimalistic DNS based redirects"
+
+[[items]]
+  name = "No Vendor Lock-in"
+  weight = 10
+  icon = "fa-unlock-alt"
+  description = """
+Choose from a wide variety of highly modular partials to built the site you need.
+"""
+
+[[items]]
+  name = """
+Hosted Service  
+*coming soon*
+"""
+  weight = 20
+  icon = "fa-gears"
+  description = """
+Let us worry about the global and fault tolerant backend infrastructure while you control and manage your complete redirect data within your DNS records.
+"""
+
+[[items]]
+  name = "Open Source"
+  weight = 30
+  icon = "fa-code"
+  description = """
+Txtdirect is open source build on top of caddy. The TXT record specification and backend redirect engine are available on github.
+"""
++++
