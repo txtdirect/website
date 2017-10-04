@@ -7,7 +7,10 @@ weight = 100
 particles = true
 
 title = "TXTdirect"
-subtitle = "DNS TXT-record based redirects"
+subtitle = """
+DNS TXT-record based redirects.
+Control and manage your own data.
+"""
 header = "header.jpg"
 logo = "logo.svg"
 button = ""
