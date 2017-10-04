@@ -10,6 +10,6 @@ title = "TXTdirect"
 subtitle = "DNS TXT-record based redirects"
 header = "header.jpg"
 logo = "logo.svg"
-button = "Details"
-link = "#details"
+button = "Features"
+link = "#features"
 +++
