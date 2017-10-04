@@ -8,7 +8,7 @@ particles = true
 
 title = "TXTdirect"
 subtitle = """
-DNS TXT-record based redirects.
+DNS TXT-record based redirects.  
 Control and manage your own data.
 """
 header = "header.jpg"
