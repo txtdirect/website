@@ -19,7 +19,7 @@ Choose from a wide variety of highly modular partials to built the site you need
 """
 
 [[items]]
-  name = "Hosted Service *coming soon*"
+  name = "Hosted Service - *coming soon*"
   weight = 20
   icon = "fa-gears"
   description = """
