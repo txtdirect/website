@@ -4,8 +4,10 @@ lastmod = "2017-10-05"
 date = "2017-10-05"
 layout = "split"
 sidebar = """
+## Imprint
 SeeTheProgress UG (limited)  
-German: SeeTheProgress UG (haftungsbeschränkt)  
+*German:*  
+SeeTheProgress UG (haftungsbeschränkt)  
 
 85716 Unterschleissheim  
 Germany
@@ -20,7 +22,7 @@ TXTdirect is a tool to enable redirects using data within your DNS system.
 
 The tool is provided as open source software by Okkur Labs.
 
-Specific details on the license and the implementation are available within the [repository](https://github.com/txtdirect/txtdirect)
+Specific details on the license and the implementation are available within our [Github repository](https://github.com/txtdirect/txtdirect).
 
 ## Disclaimer
 
