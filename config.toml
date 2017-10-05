@@ -17,6 +17,10 @@ DefaultContentLanguage = "en"
     logoNavigation = "logo.svg"
     textNavigation = "TXTdirect"
 
+  [params.style]
+    backgroundNavigation = "light"
+    backgroundFooter = "primary"
+
   # Theme customizations
   # Assets relative to 'static/'
   [params.custom]

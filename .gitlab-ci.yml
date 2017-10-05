@@ -7,7 +7,7 @@ variables:
   DOCKER_HOST: "tcp://localhost:2375"
   THEME_REPO: "https://github.com/okkur/syna.git"
   THEME: "syna"
-  HUGO_CONTAINER: "seetheprogress/hugo:v0.26-912faa"
+  HUGO_CONTAINER: "seetheprogress/hugo:v0.29.0-63c538"
 
 before_script:
   - BUILD_REF_SHORT=`echo $CI_BUILD_REF | cut -c1-8`
@@ -31,6 +31,6 @@ build pages:about for production:
   only:
     - master
   script:
-  - git clone -b v0.1.0 $THEME_REPO themes/$THEME
+  - git clone -b v0.3.0 $THEME_REPO themes/$THEME
   - docker run -u $(id -u):$(id -g) -v $(pwd):/source $HUGO_CONTAINER /hugo -s /source
   - netlify deploy -p public -s $SITE -t $TOKEN
