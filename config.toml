@@ -3,7 +3,7 @@ baseurl = "https://about.txtdirect.org/"
 languageCode = "en-us"
 title = "txtdirect - DNS TXT-record based redirects"
 theme = "syna"
-version = "0.1.0"
+version = "0.2.0"
 
 DefaultContentLanguage = "en"
 
@@ -45,9 +45,9 @@ DefaultContentLanguage = "en"
     domain = "about.txtdirect.org" # Track subdomains via "*.example.com"
 
   [params.contact]
-    disabled = false
+    disabled = true
 
 [[menu.legalFooter]]
-  url = "https://about.seetheprogress.com/about/"
+  url = "/about"
   name = "About Us"
   weight = 10
