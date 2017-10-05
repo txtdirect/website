@@ -4,11 +4,11 @@ fragment = "footer"
 date = "2017-10-04"
 lastmod = "2017-10-04"
 weight = 900
-background = "secondary"
+background = "primary"
 
 linkTitle = ""
 logoTitle = ""
-logo = "logo.svg"
+logo = "logo-white.svg"
 logoText = ""
 descriptionTitle = "About TXTdirect"
 description = """

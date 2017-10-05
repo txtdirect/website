@@ -19,7 +19,7 @@ DefaultContentLanguage = "en"
 
   [params.style]
     backgroundNavigation = "light"
-    backgroundFooter = "primary"
+    backgroundFooter = "dark"
 
   # Theme customizations
   # Assets relative to 'static/'
