@@ -8,11 +8,10 @@ particles = true
 
 title = "TXTdirect"
 subtitle = """
-DNS TXT-record based redirects.  
-Control and manage your own data.
+DNS TXT-record based redirects
 """
 header = "header.jpg"
 logo = "logo.svg"
-button = ""
-link = ""
+button = "Repository"
+link = "https://github.com/txtdirect/txtdirect"
 +++
