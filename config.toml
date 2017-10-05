@@ -14,11 +14,11 @@ DefaultContentLanguage = "en"
 
   # Branding options
   [params.branding]
-    logoNavigation = "logo.svg"
+    logoNavigation = "logo-white.svg"
     textNavigation = "TXTdirect"
 
   [params.style]
-    backgroundNavigation = "light"
+    backgroundNavigation = "primary"
     backgroundFooter = "dark"
 
   # Theme customizations
