@@ -15,7 +15,7 @@ subtitle= "Convenient and minimalistic DNS based redirects"
   weight = 10
   icon = "fa-unlock-alt"
   description = """
-Choose from a wide variety of highly modular partials to built the site you need.
+Choose from a wide variety of highly modular partials to build the site you need.
 """
 
 [[items]]
@@ -31,6 +31,6 @@ Let us worry about the global and fault tolerant backend infrastructure while yo
   weight = 30
   icon = "fa-code"
   description = """
-Txtdirect is open source build on top of caddy. The TXT record specification and backend redirect engine are available on github.
+Txtdirect is open source built on top of caddy. The TXT record specification and backend redirect engine are available on github.
 """
 +++
