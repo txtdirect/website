@@ -16,7 +16,8 @@ Best place to start is our [contribution guide](/CONTRIBUTING.md).
 
 ----
 
-*Website is licensed under the [Creative Commons BY-NC-SA 4.0](/LICENSE)*  
+*Code is licensed under the [Creative Commons BY-NC-SA 4.0](/LICENSE).*  
+*Documentation/examples are licensed under [Creative Commons BY-NC-SA 4.0](/docs/LICENSE).*  
 *Illustrations, trademarks and third-party resources are owned by their respective party and are subject to different licensing.*
 
 *The TXTdirect logo was created by [Florin Luca](https://99designs.com/profiles/florinluca)*
@@ -24,3 +25,4 @@ Best place to start is our [contribution guide](/CONTRIBUTING.md).
 ---
 
 Copyright 2017 - The TXTdirect Website Authors
+
