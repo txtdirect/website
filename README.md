@@ -28,5 +28,5 @@ Best place to start is our [contribution guide](/CONTRIBUTING.md).
 
 ---
 
-Copyright 2017 - The TXTdirect Website Authors%!(EXTRA string=output)
+Copyright 2017 - The TXTdirect Website Authors
 
