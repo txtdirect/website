@@ -9,7 +9,6 @@ project:
     Built with [Hugo](https://gohugo.io) and [Syna](https://github.com/okkur/syna).
   version: "v0.1.0"
   mainLicense: "creativeCommonsByNcSa"
-  docsLicense: "creativeCommonsByNcSa"
 
 vision:
   type: "community"
