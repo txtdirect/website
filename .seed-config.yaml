@@ -1,0 +1,51 @@
+project:
+  name: "TXTdirect Website"
+  state: "stable"
+  image: "https://github.com/txtdirect/website/blob/master/static/images/logo.svg"
+  website: "https://about.txtdirect.org"
+  oneLiner: "TXTdirect website"
+  description: |
+    TXTdirect website repository for the static website hosted at https://about.txtdirect.org.  
+    Built with [Hugo](https://gohugo.io) and [Syna](https://github.com/okkur/syna).
+  version: "v0.1.0"
+  mainLicense: "creativeCommonsByNcSa"
+  docsLicense: "creativeCommonsByNcSa"
+
+vision:
+  type: "community"
+  overview: |
+    Community website to showcase TXTdirect.
+
+contributionLinks:
+  issueTemplate: "/.github/ISSUE_TEMPLATE.md"
+  starterIssues: "https://github.com/txtdirect/website/labels/starter%20issue" # replace dear-github with your actual url
+
+emails:
+  security: "security@okkur.io"
+  coc: "coc@okkur.io"
+
+copyright:
+  year: "2017"
+
+cla:
+  copyrightHolder: "Michael Grosser"
+
+maintainers:
+  - name: "Antoine Martin"
+    nick: "alarsyo"
+  - name: "Michael Grosser"
+    nick: "stp-ip"
+
+repo:
+  link: "https://github.com/txtdirect/website/"
+  type: "Github"
+
+badges:
+  - image: "https://img.shields.io/badge/state-stable-green.svg"
+    alt: "state"
+  - image: "https://img.shields.io/github/release/txtdirect/website.svg"
+    link: "https://github.com/txtdirect/website/releases"
+    alt: "release"
+  - image: "https://img.shields.io/github/license/txtdirect/website.svg"
+    link: "LICENSE"
+    alt: "license"
