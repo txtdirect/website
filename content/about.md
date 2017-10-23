@@ -14,7 +14,6 @@ Germany
 
 **Authorized representative:**  
 Michael Grosser, Founder
-
 """
 +++
 
