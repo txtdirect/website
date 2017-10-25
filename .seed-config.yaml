@@ -8,7 +8,7 @@ project:
     TXTdirect website repository for the static website hosted at https://about.txtdirect.org.  
     Built with [Hugo](https://gohugo.io) and [Syna](https://github.com/okkur/syna).
   version: "v0.1.0"
-  mainLicense: "creativeCommonsByNcSa"
+  mainLicense: "CCByNcSa"
 
 vision:
   type: "community"

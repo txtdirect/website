@@ -1,4 +1,5 @@
 <a href='https://about.txtdirect.org'><img src='https://github.com/txtdirect/website/blob/master/static/images/logo.svg' width='500'/></a>
+
 TXTdirect website
 
  [![state](https://img.shields.io/badge/state-stable-green.svg)]() [![release](https://img.shields.io/github/release/txtdirect/website.svg)](https://github.com/txtdirect/website/releases) [![license](https://img.shields.io/github/license/txtdirect/website.svg)](LICENSE)
@@ -23,8 +24,6 @@ Best place to start is our [contribution guide](/CONTRIBUTING.md).
 *Code is licensed under the [Creative Commons BY-NC-SA 4.0](/LICENSE).*  
 *Documentation/examples are licensed under [Creative Commons BY-NC-SA 4.0](/docs/LICENSE).*  
 *Illustrations, trademarks and third-party resources are owned by their respective party and are subject to different licensing.*
-
-*The TXTdirect logo was created by [Florin Luca](https://99designs.com/profiles/florinluca)*
 
 ---
 
