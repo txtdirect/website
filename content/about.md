@@ -1,5 +1,5 @@
 +++
-title = "About TXTdirect"
+title = "About TXTDIRECT"
 lastmod = "2017-10-05"
 date = "2017-10-05"
 layout = "split"
@@ -17,7 +17,7 @@ Michael Grosser, Founder
 """
 +++
 
-TXTdirect is a tool to enable redirects using data within your DNS system.
+TXTDIRECT is a tool to enable redirects using data within your DNS system.
 
 The tool is provided as open source software by Okkur Labs.
 
