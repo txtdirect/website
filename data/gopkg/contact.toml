@@ -1,0 +1,38 @@
++++
+fragment = "contact"
+disabled = true
+date = "2017-10-19"
+lastmod = "2017-10-19"
+weight = 900
+selfLink = "contact"
+formName = "gopkgContact"
+background = "dark"
+
+title = "Contact us"
+subtitle = "Talk to us about pricing tiers, support contracts or sponsoring!"
+
+postURL = "https://mailout.seetheprogress.eu/"
+email = "gopkg@seetheprogress.net"
+
+[message]
+  success = "Thank you for contacting us."
+  error = "Message could not be send. Please contact us at gopkg@seetheprogress.net instead."
+
+[fields.name]
+  text = "Your Name *"
+  error = "Please enter your name"
+
+[fields.email]
+  text = "Your Email *"
+  error = "Please enter your email address"
+
+[fields.message]
+  text = "Your Message *"
+  error = "Please enter a message"
+
+[[fields.hidden]]
+  name = "site"
+
+[[fields.hidden]]
+  name = "page"
++++

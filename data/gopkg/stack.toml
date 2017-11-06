@@ -1,0 +1,16 @@
++++
+fragment = "logos"
+#disabled = false
+date = "2017-10-04"
+lastmod = "2017-10-04"
+weight = 600
+#background = "light"
+selfLink = "tools"
+
+title = "Based on"
+
+[[logos]]
+  name = "TXTDIRECT"
+  weight = 20
+  logo = "txtdirect.svg"
++++

@@ -3,7 +3,7 @@ fragment = "logos"
 #disabled = false
 date = "2017-10-04"
 lastmod = "2017-10-04"
-weight = 700
+weight = 600
 #background = "light"
 selfLink = "tools"
 
@@ -14,17 +14,14 @@ subtitle = "*at every level*"
   name = "hugo"
   weight = 20
   logo = "hugo.svg"
-  #link = "#"
 
 [[logos]]
   name = "go"
   weight = 10
   logo = "go.svg"
-  #link = "#"
 
 [[logos]]
   name = "caddy"
   weight = 30
   logo = "caddy.svg"
-  #link = "#"
 +++

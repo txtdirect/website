@@ -1,0 +1,37 @@
++++
+fragment = "items"
+#disabled = false
+date = "2017-10-04"
+lastmod = "2017-10-04"
+weight = 100
+background = "secondary"
+selfLink = "features"
+
+title = "Features"
+subtitle= "Convenient and minimalistic DNS based package imports"
+
+[[items]]
+  name = "Automatic TLS"
+  weight = 10
+  icon = "fa-unlock-alt"
+  description = """
+Automatic Let's Encrypt based TLS certificates for your vanity package url to make package downloads secure by default.
+"""
+
+[[items]]
+  name = "Globally hosted"
+  weight = 20
+  icon = "fa-cloud"
+  description = """
+Let us worry about the global and fault tolerant backend infrastructure while you control and manage your data within your DNS records.  
+Using the powerful infrastructure from Google Cloud with a global Anycast IP network.
+"""
+
+[[items]]
+  name = "Open Source"
+  weight = 30
+  icon = "fa-code"
+  description = """
+Gopkg.link is open source built on top of Caddy and TXTDIRECT. The TXT record specification and backend redirect engine are available on github.
+"""
++++

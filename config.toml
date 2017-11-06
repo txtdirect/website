@@ -6,6 +6,7 @@ theme = "syna"
 version = "0.2.0"
 
 DefaultContentLanguage = "en"
+pygmentsCodeFences = true 
 
 [params]
   name = "Okkur Labs"
@@ -18,8 +19,8 @@ DefaultContentLanguage = "en"
     textNavigation = "TXTdirect"
 
   [params.style]
-    backgroundNavigation = "primary"
-    backgroundFooter = "dark"
+    backgroundNavigation = "dark"
+    backgroundFooter = "secondary"
 
   # Theme customizations
   # Assets relative to 'static/'
@@ -46,6 +47,21 @@ DefaultContentLanguage = "en"
 
   [params.contact]
     disabled = true
+
+[[menu.main]]
+  url = "#single-subdomain"
+  name = "Hosted Service"
+  weight = 10
+
+[[menu.main]]
+  url = "/gopkg"
+  name = "Gopkg.link"
+  weight = 20
+
+[[menu.main]]
+  url = "/about"
+  name = "About Us"
+  weight = 30
 
 [[menu.legalFooter]]
   url = "/about"

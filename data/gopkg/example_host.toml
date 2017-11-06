@@ -1,0 +1,28 @@
++++
+fragment = "item"
+#disabled = false
+date = "2017-11-04"
+lastmod = "2017-11-04"
+weight = 310
+background = "light"
+selfLink = "single-subdomain"
+align = "left"
+
+title = "Single repository import"
+
+icon = "fa-arrow-down"
+
+pre = "*pkg.txtdirect.org*"
+post = "*github.com/txtdirect/txtdirect*"
+
+description = """
+  * Point your choosen subdomain by CNAME to `gopkg.link.`
+  * Create a TXT record with the subdomain `_redirect` for your subdomain
+  * Use the open TXTDIRECT spec to set your specific repository
+
+```text
+  pkg.txtdirect.org             86000 IN CNAME   gopkg.link.
+  _redirect.org.txtdirect.org   86000 IN TXT     "v=txtv0;to=https://github.com/txtdirect/txtdirect;type=gometa"
+```
+"""
++++

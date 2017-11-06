@@ -6,16 +6,15 @@ lastmod = "2017-10-04"
 weight = 100
 particles = true
 
-title = "TXTDIRECT"
+title = "gopkg.link"
 subtitle = """
-DNS TXT-record based redirects
-"""
+Vanity Package Imports"""
 header = "header.jpg"
-logo = "logo.svg"
-logoWidth = "500px"
+logo = "gopkg.svg"
+logoWidth = "400px"
 
 [[buttons]]
-  text = "Try our hosted service"
-  link = "#single-subdomain"
+  text = "Setup"
+  link = "/gopkg#single-subdomain"
   color = "primary"
 +++

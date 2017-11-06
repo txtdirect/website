@@ -1,29 +1,30 @@
 +++
-fragment = "column-items"
+fragment = "items"
 #disabled = false
 date = "2017-10-04"
 lastmod = "2017-10-04"
 weight = 200
-background = "dark"
+background = "light"
 selfLink = "features"
 
 title = "Features"
 subtitle= "Convenient and minimalistic DNS based redirects"
 
 [[items]]
-  name = "No Vendor Lock-in"
+  name = "No vendor lock-in"
   weight = 10
   icon = "fa-unlock-alt"
   description = """
-Choose from a wide variety of highly modular partials to build the site you need.
+Don't rely on provider specific implementations of non standard ALIAS records or CNAME flattening. Reuse our open specification based on the standards based TXT-record.
 """
 
 [[items]]
-  name = "Hosted Service - *coming soon*"
+  name = "Hosted Service"
   weight = 20
   icon = "fa-gears"
   description = """
-Let us worry about the global and fault tolerant backend infrastructure while you control and manage your complete redirect data within your DNS records.
+Let us worry about the global and fault tolerant backend infrastructure while you control and manage your complete redirect data within your DNS records.  
+Get started with our [hosted service](#single-subdomain)
 """
 
 [[items]]
@@ -31,6 +32,6 @@ Let us worry about the global and fault tolerant backend infrastructure while yo
   weight = 30
   icon = "fa-code"
   description = """
-Txtdirect is open source built on top of caddy. The TXT record specification and backend redirect engine are available on github.
+Txtdirect is open source built on top of Caddy. The TXT record specification and backend redirect engine are available on github.
 """
 +++
