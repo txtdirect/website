@@ -18,7 +18,7 @@ post = "*about.txtdirect.org*"
 description = """
   * Point your chosen subdomain by CNAME to `txtdirect.io.`
   * Create a TXT record with the subdomain `_redirect` for your subdomain
-  * Use the open TXTDIRECT spec to set your specific repository
+  * Use the open TXTDirect spec to set your specific repository
 
 ```text
   www.txtdirect.org             86000 IN CNAME   txtdirect.io.

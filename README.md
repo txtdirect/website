@@ -1,16 +1,16 @@
 <a href='https://about.txtdirect.org'><img src='https://github.com/txtdirect/website/blob/master/static/images/logo.svg' width='500'/></a>
 
-TXTdirect website
+TXTDirect website
 
  [![state](https://img.shields.io/badge/state-stable-green.svg)]() [![release](https://img.shields.io/github/release/txtdirect/website.svg)](https://github.com/txtdirect/website/releases) [![license](https://img.shields.io/github/license/txtdirect/website.svg)](LICENSE)
 
 
 
-# TXTdirect Website
-TXTdirect website repository for the static website hosted at https://about.txtdirect.org.  
+# TXTDirect Website
+TXTDirect website repository for the static website hosted at https://about.txtdirect.org.  
 Built with [Hugo](https://gohugo.io) and [Syna](https://github.com/okkur/syna).
 
-## Using TXTdirect Website
+## Using TXTDirect Website
 
 
 ## Support
@@ -27,5 +27,5 @@ Best place to start is our [contribution guide](/CONTRIBUTING.md).
 
 ---
 
-Copyright 2017 - The TXTdirect Website Authors
+Copyright 2017 - The TXTDirect Website Authors
 

@@ -10,7 +10,7 @@ selfLink = "tools"
 title = "Based on"
 
 [[logos]]
-  name = "TXTDIRECT"
+  name = "TXTDirect"
   weight = 20
   logo = "txtdirect.svg"
 +++

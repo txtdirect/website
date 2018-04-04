@@ -1,7 +1,7 @@
 # Site settings
 baseurl = "https://about.txtdirect.org/"
 languageCode = "en-us"
-title = "txtdirect - DNS TXT-record based redirects"
+title = "TXTDirect - DNS TXT-record based redirects"
 theme = "syna"
 version = "0.2.0"
 
@@ -16,7 +16,7 @@ pygmentsCodeFences = true
   # Branding options
   [params.branding]
     logoNavigation = "logo-white.svg"
-    textNavigation = "TXTdirect"
+    textNavigation = "TXTDirect"
 
   [params.style]
     backgroundNavigation = "dark"
