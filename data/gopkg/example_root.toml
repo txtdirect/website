@@ -19,8 +19,8 @@ pre = "*example.com*"
 post = "*github.com/txtdirect/txtdirect*"
 
 description = """
-  * Point your choosen root by A-record to `35.201.81.193`
-  * Point your choosen root by AAAA-record to `2600:1901:0:3f61:0:0:0:0`
+  * Point your chosen root by A-record to `35.201.81.193`
+  * Point your chosen root by AAAA-record to `2600:1901:0:3f61:0:0:0:0`
   * Create a TXT record with the subdomain `_redirect` for your domain
   * Use the open TXTDirect spec to set your specific repository
 
