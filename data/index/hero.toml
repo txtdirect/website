@@ -6,7 +6,7 @@ lastmod = "2017-10-04"
 weight = 100
 particles = true
 
-title = "TXTDIRECT"
+title = "TXTDirect"
 subtitle = """
 DNS TXT-record based redirects
 """

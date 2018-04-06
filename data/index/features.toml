@@ -32,6 +32,6 @@ Get started with our [hosted service](#single-subdomain)
   weight = 30
   icon = "fa-code"
   description = """
-Txtdirect is open source built on top of Caddy. The TXT record specification and backend redirect engine are available on github.
+TXTDirect is open source built on top of Caddy. The TXT record specification and backend redirect engine are available on github.
 """
 +++

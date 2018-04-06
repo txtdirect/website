@@ -16,7 +16,7 @@ email = "gopkg@seetheprogress.net"
 
 [message]
   success = "Thank you for contacting us."
-  error = "Message could not be send. Please contact us at gopkg@seetheprogress.net instead."
+  error = "Message could not be sent. Please contact us at gopkg@seetheprogress.net instead."
 
 [fields.name]
   text = "Your Name *"

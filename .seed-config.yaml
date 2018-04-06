@@ -1,11 +1,11 @@
 project:
-  name: "TXTdirect Website"
+  name: "TXTDirect Website"
   state: "stable"
   image: "https://github.com/txtdirect/website/blob/master/static/images/logo.svg"
   website: "https://about.txtdirect.org"
-  oneLiner: "TXTdirect website"
+  oneLiner: "TXTDirect website"
   description: |
-    TXTdirect website repository for the static website hosted at https://about.txtdirect.org.  
+    TXTDirect website repository for the static website hosted at https://about.txtdirect.org.  
     Built with [Hugo](https://gohugo.io) and [Syna](https://github.com/okkur/syna).
   version: "v0.1.0"
   mainLicense: "CCByNcSa"
@@ -13,7 +13,7 @@ project:
 vision:
   type: "community"
   overview: |
-    Community website to showcase TXTdirect.
+    Community website to showcase TXTDirect.
 
 contributionLinks:
   issueTemplate: "/.github/ISSUE_TEMPLATE.md"

@@ -12,11 +12,11 @@ title = "Contact us"
 subtitle = "Talk to us about pricing tiers, support contracts or sponsoring!"
 
 postURL = "https://mailout.seetheprogress.eu/"
-email = "txtdirect@seetheprogress.net"
+email = "txtdirect@okkur.io"
 
 [message]
   success = "Thank you for contacting us."
-  error = "Message could not be send. Please contact us at txtdirect@seetheprogress.net instead."
+  error = "Message could not be sent. Please contact us at txtdirect@okkur.io instead."
 
 [fields.name]
   text = "Your Name *"

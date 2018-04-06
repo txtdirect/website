@@ -32,6 +32,6 @@ Using the powerful infrastructure from Google Cloud with a global Anycast IP net
   weight = 30
   icon = "fa-code"
   description = """
-Gopkg.link is open source built on top of Caddy and TXTDIRECT. The TXT record specification and backend redirect engine are available on github.
+Gopkg.link is open source built on top of Caddy and TXTDirect. The TXT record specification and backend redirect engine are available on GitHub.
 """
 +++

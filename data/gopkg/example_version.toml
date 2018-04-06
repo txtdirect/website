@@ -16,10 +16,10 @@ pre = "*pkg.txtdirect.org/v0.1.0*"
 post = "*github.com/txtdirect/txtdirect/tree/0.1.0*"
 
 description = """
-  * Point your choosen subdomain by CNAME to `gopkg.link.`
+  * Point your chosen subdomain by CNAME to `gopkg.link.`
   * Create a TXT record with the subdomain `_redirect` for your subdomain
-  * Use the open TXTDIRECT spec to set your regex to split up traffic
-  * Use the open TXTDIRECT spec to configure various paths to multiple repositories
+  * Use the open TXTDirect spec to set your regex to split up traffic
+  * Use the open TXTDirect spec to configure various paths to multiple repositories
 
 Reusing path for version:
 ```text

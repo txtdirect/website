@@ -14,5 +14,5 @@ bug | feature
 **Anything else we need to know?**:
 
 **Environment**:
-- TXTdirect Website version:  
+- TXTDirect Website version:  
 - Others:
