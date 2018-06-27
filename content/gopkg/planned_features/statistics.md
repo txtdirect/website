@@ -1,7 +1,7 @@
 +++
 title = "Statistics"
 weight = 10
-icon = "fas fa-bar-chart"
+icon = "fas fa-chart-bar"
 
 +++
 

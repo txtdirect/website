@@ -1,7 +1,7 @@
 +++
 title = "Support"
 weight = 30
-icon = "fa-users"
+icon = "fas fa-users"
 
 +++
 
