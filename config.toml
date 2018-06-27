@@ -3,50 +3,38 @@ baseurl = "https://about.txtdirect.org/"
 languageCode = "en-us"
 title = "TXTDirect - DNS TXT-record based redirects"
 theme = "syna"
-version = "0.2.0"
+version = "0.3.0"
+enableGitInfo = true
 
-DefaultContentLanguage = "en"
+[frontmatter]
+date = ["date", "lastmod"]
+lastmod = ["lastmod", ":git", "date"]
+
 pygmentsCodeFences = true 
+DefaultContentLanguage = "en"
 
 [params]
   name = "Okkur Labs"
   description = "DNS TXT-record based redirects"
-  image = "header.jpg"
-
-  # Branding options
-  [params.branding]
-    logoNavigation = "logo-white.svg"
-    textNavigation = "TXTDirect"
 
   [params.style]
-    backgroundNavigation = "dark"
-    backgroundFooter = "secondary"
+    #background = "secondary"
 
   # Theme customizations
   # Assets relative to 'static/'
   [params.custom]
     favicon = "favicon.ico"
-    faviconICOSizes = "16x16 32x32"
-    faviconPNG = "favicon.png"
-    faviconSVG = "favicon.svg"
-    iconFont = ""
-    css = ["overwrite.css"]
+    favicon_ico_sizes = "16x16 32x32"
+    favicon_png = "favicon.png"
+    favicon_svg = "favicon.svg"
+    css = ["css/overwrite.css"]
     js  = []
-
-  # Repository Button
-  [params.repoButton]
-    url = "https://github.com/txtdirect/txtdirect"
-    text = "Star" # default: "Star"
-    icon = "fa-github" # default: "fa-github"
 
   # Piwik tracking
   [params.analytics.piwik]
     url = "https://stats.seetheprogress.com"
     id = "12"
     domain = "about.txtdirect.org" # Track subdomains via "*.example.com"
-
-  [params.contact]
-    disabled = true
 
 [[menu.main]]
   url = "#single-subdomain"
@@ -63,7 +51,7 @@ pygmentsCodeFences = true
   name = "About Us"
   weight = 30
 
-[[menu.legalFooter]]
+[[menu.copyright_footer]]
   url = "/about"
   name = "About Us"
   weight = 10
