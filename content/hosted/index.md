@@ -1,5 +1,5 @@
 +++
 title = "TXTDirect"
 date = "2017-09-07"
-description = "TXTDirect"
+description = "Hosted TXTDirect service"
 +++

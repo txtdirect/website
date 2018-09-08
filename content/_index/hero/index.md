@@ -19,6 +19,6 @@ subtitle = "DNS TXT-record based redirects"
 
 [[buttons]]
   text = "Try our hosted service"
-  url = "#single-subdomain"
+  url = "/hosted"
   color = "primary"
 +++
