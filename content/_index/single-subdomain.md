@@ -12,7 +12,6 @@ icon = "fas fa-arrow-down"
 
 pre = "*www.txtdirect.org*"
 post = "*about.txtdirect.org*"
-
 +++
 
 * Point your chosen subdomain by CNAME to `txtdirect.io.`

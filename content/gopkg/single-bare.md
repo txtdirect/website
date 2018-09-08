@@ -15,7 +15,6 @@ icon = "fas fa-arrow-down"
 
 pre = "*example.com*"
 post = "*github.com/txtdirect/txtdirect*"
-
 +++
 
 * Point your chosen root by A-record to `35.201.81.193`

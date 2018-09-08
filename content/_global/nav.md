@@ -5,8 +5,7 @@ date = "2018-06-26"
 weight = 0
 background = "dark"
 
-# Branding options
-[branding]
+[asset]
   image = "logo-white.svg"
   text = "TXTDirect"
 
@@ -14,5 +13,4 @@ background = "dark"
   url = "https://github.com/txtdirect/txtdirect"
   text = "" # default: "Star"
   icon = "fab fa-github"
-
 +++

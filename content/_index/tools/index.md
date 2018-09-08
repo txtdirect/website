@@ -8,17 +8,17 @@ weight = 600
 title = "Open Source"
 subtitle = "*at every level*"
 
-[[logos]]
+[[assets]]
   name = "hugo"
   weight = 20
   image = "hugo.svg"
 
-[[logos]]
+[[assets]]
   name = "go"
   weight = 10
   image = "go.svg"
 
-[[logos]]
+[[assets]]
   name = "caddy"
   weight = 30
   image = "caddy.svg"

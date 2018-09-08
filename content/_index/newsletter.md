@@ -8,5 +8,4 @@ form_name = "subscribe"
 
 media = '<iframe src="https://landing.mailerlite.com/webforms/landing/u5o3e4" style="border: none; width: 100%; height: 185px;"></iframe>'
 responsive = false
-
 +++

@@ -5,7 +5,6 @@ date = "2017-10-04"
 weight = 100
 background = "light"
 align = "center"
-
 +++
 
 Gopkg.link is currently in beta and is provided for free for all users.

@@ -12,7 +12,6 @@ icon = "fas fa-arrow-down"
 
 pre = "*pkg.txtdirect.org/v0.1.0*"
 post = "*github.com/txtdirect/txtdirect/tree/0.1.0*"
-
 +++
 
 * Point your chosen subdomain by CNAME to `gopkg.link.`

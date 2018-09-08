@@ -8,9 +8,11 @@ particles = false
 
 title = "TXTDirect"
 subtitle = "DNS TXT-record based redirects"
-header = "header.jpg"
 
-[logo]
+[header]
+  image = "header.jpg"
+
+[asset]
   image = "logo.svg"
   width = "500px" # optional - will default to image width
   #height = "150px" # optional - will default to image height
@@ -19,5 +21,4 @@ header = "header.jpg"
   text = "Try our hosted service"
   url = "#single-subdomain"
   color = "primary"
-
 +++

@@ -8,9 +8,10 @@ particles = false
 title = "Gopkg.link"
 subtitle = "Vanity Package Imports"
 
-header = "header.jpg"
+[header]
+  image = "header.jpg"
 
-[logo]
+[asset]
   image = "gopkg.svg"
   width = "300px" # optional - will default to image width
   #height = "150px" # optional - will default to image height

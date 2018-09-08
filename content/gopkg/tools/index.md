@@ -7,9 +7,8 @@ weight = 600
 
 title = "Based on"
 
-[[logos]]
+[[assets]]
   name = "TXTDirect"
   weight = 20
   image = "txtdirect.svg"
-
 +++
