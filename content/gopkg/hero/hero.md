@@ -20,5 +20,4 @@ subtitle = "Vanity Package Imports"
   text = "Setup"
   url = "/gopkg#single-subdomain"
   color = "primary"
-
 +++
