@@ -11,4 +11,5 @@ subtitle = "Get started with our hosted TXTDirect instance"
 
 [asset]
   image = "logo.svg"
+  width = "500px" # optional - will default to image width
 +++
