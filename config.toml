@@ -27,7 +27,7 @@ DefaultContentLanguage = "en"
     favicon_ico_sizes = "16x16 32x32"
     favicon_png = "favicon.png"
     favicon_svg = "favicon.svg"
-    css = ["css/overwrite.css"]
+    css = []
     js  = []
 
   # Piwik tracking
@@ -36,8 +36,31 @@ DefaultContentLanguage = "en"
     id = "12"
     domain = "about.txtdirect.org" # Track subdomains via "*.example.com"
 
+  [params.colors]
+    white = "#fff"
+    gray100 = "#f8f9fa" # light
+    gray200 = "#e9ecef"
+    gray300 = "#dee2e6"
+    gray400 = "#ced4da"
+    gray500 = "#adb5bd"
+    gray600 = "#868e96" # secondary
+    gray700 = "#495057"
+    gray800 = "#343a40" # dark
+    gray900 = "#212529"
+    black = "#000"
+    blue = "#0071bc" # primary
+    indigo = "#4b00bc"
+    purple = "#a900bc"
+    pink = "#dd7fb8"
+    red = "#bc0013" # danger
+    orange = "#bc4b00"
+    yellow = "#bca900" # warning
+    green = "#13bc00" # success
+    teal = "#00bca9"
+    cyan = "#0affe6" # info
+
 [[menu.main]]
-  url = "#single-subdomain"
+  url = "/hosted"
   name = "Hosted Service"
   weight = 10
 
