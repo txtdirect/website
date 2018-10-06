@@ -8,10 +8,11 @@ align = "left"
 
 title = "Dynamic subdomain import"
 
-icon = "fas fa-arrow-down"
-
 pre = "*pkg.txtdirect.org/v0.1.0*"
 post = "*github.com/txtdirect/txtdirect/tree/0.1.0*"
+
+[asset]
+  icon = "fas fa-arrow-down"
 +++
 
 * Point your chosen subdomain by CNAME to `gopkg.link.`

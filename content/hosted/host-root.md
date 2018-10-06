@@ -8,10 +8,11 @@ align = "left"
 
 subtitle = "Host based redirect on root record"
 
-icon = "fas fa-arrow-down"
-
 pre = "*txtdirect.org*"
 post = "*about.txtdirect.org*"
+
+[asset]
+  icon = "fas fa-arrow-down"
 +++
 
 * Point your chosen root by A-record to `35.201.95.240`
@@ -26,5 +27,5 @@ _redirect.txtdirect.org   86000 IN TXT     "v=txtv0;to=https://about.txtdirect.o
 ```
 
 ## Options
-`to=` sets the URL to redirect to  
+`to=` sets the URL to redirect to
 `code=` can change the redirect code used such as 301 or 302

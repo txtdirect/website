@@ -8,10 +8,11 @@ align = "left"
 
 title = "Single repository import"
 
-icon = "fas fa-arrow-down"
-
 pre = "*pkg.txtdirect.org*"
 post = "*github.com/txtdirect/txtdirect*"
+
+[asset]
+  icon = "fas fa-arrow-down"
 +++
 
 * Point your chosen subdomain by CNAME to `gopkg.link.`

@@ -7,14 +7,15 @@ background = "dark"
 align = "left"
 
 title = """
-Single repository import  
+Single repository import
 (bare domain)
 """
 
-icon = "fas fa-arrow-down"
-
 pre = "*example.com*"
 post = "*github.com/txtdirect/txtdirect*"
+
+[asset]
+  icon = "fas fa-arrow-down"
 +++
 
 * Point your chosen root by A-record to `35.201.81.193`
