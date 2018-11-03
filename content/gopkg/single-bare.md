@@ -7,7 +7,7 @@ background = "dark"
 align = "left"
 
 title = """
-Single repository import
+Single repository import  
 (bare domain)
 """
 

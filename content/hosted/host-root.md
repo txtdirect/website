@@ -27,5 +27,5 @@ _redirect.txtdirect.org   86000 IN TXT     "v=txtv0;to=https://about.txtdirect.o
 ```
 
 ## Options
-`to=` sets the URL to redirect to
+`to=` sets the URL to redirect to  
 `code=` can change the redirect code used such as 301 or 302
