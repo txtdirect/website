@@ -8,10 +8,11 @@ align = "left"
 
 subtitle = "Host based redirect using CNAME"
 
-icon = "fas fa-arrow-down"
-
 pre = "*www.txtdirect.org*"
 post = "*about.txtdirect.org*"
+
+[asset]
+  icon = "fas fa-arrow-down"
 +++
 
 * Point your chosen subdomain by CNAME to `txtdirect.io.`

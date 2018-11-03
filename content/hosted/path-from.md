@@ -8,10 +8,11 @@ align = "left"
 
 subtitle = "Path based redirect with custom order"
 
-icon = "fas fa-arrow-down"
-
 pre = "*s.txtdirect.org/hosted*"
 post = "*about.txtdirect.org/hosted*"
+
+[asset]
+  icon = "fas fa-arrow-down"
 +++
 
 * Point your chosen subdomain by CNAME to `txtdirect.io.`

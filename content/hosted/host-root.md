@@ -8,10 +8,11 @@ align = "left"
 
 subtitle = "Host based redirect on root record"
 
-icon = "fas fa-arrow-down"
-
 pre = "*txtdirect.org*"
 post = "*about.txtdirect.org*"
+
+[asset]
+  icon = "fas fa-arrow-down"
 +++
 
 * Point your chosen root by A-record to `35.201.95.240`
