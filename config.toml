@@ -64,11 +64,6 @@ DefaultContentLanguage = "en"
   name = "Hosted Service"
   weight = 10
 
-[[menu.main]]
-  url = "/gopkg"
-  name = "Gopkg.link"
-  weight = 20
-
 [[menu.copyright_footer]]
   url = "/imprint"
   name = "Imprint"
