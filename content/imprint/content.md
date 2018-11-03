@@ -12,7 +12,10 @@ subtitle = ""
 *Information in accordance with section 5 TMG*
 
 **Website provided by:**
-Okkur Labs GmbH  
+SeeTheProgress UG (limited)  
+
+*German:*  
+SeeTheProgress UG (haftungsbeschränkt)  
 
 Hauptstrasse 15  
 85716 Unterschleissheim  
