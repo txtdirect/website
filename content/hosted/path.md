@@ -1,12 +1,11 @@
 +++
 fragment = "item"
-#disabled = false
 date = "2018-09-08"
 weight = 310
-background = "light"
+background = "white"
 align = "left"
 
-subtitle = "Path based redirect"
+subtitle = "Path based redirect (shortener)"
 
 pre = "*s.txtdirect.org/hosted*"
 post = "*about.txtdirect.org/hosted*"
@@ -15,22 +14,25 @@ post = "*about.txtdirect.org/hosted*"
   icon = "fas fa-arrow-down"
 +++
 
-* Point your chosen subdomain by CNAME to `txtdirect.io.`
-* Create a TXT record with the subdomain `_redirect`
-* Use the open TXTDirect spec to set your specific repository
+* Point your chosen subdomain CNAME to **txtd.io.**
+* Create a TXT record with the subdomain **_redirect**
+* Use the open TXTDirect spec to configure your redirect
 
 ```text
-www.txtdirect.org                  86000 IN CNAME   txtdirect.io.
+s.txtdirect.org                    86000 IN CNAME   txtd.io.
 _redirect.s.txtdirect.org          86400 IN TXT     "v=txtv0;to=https://about.txtdirect.org;root=https://about.txtdirect.org;type=path"
+
 _redirect.hosted.s.txtdirect.org   86400 IN TXT     "v=txtv0;to=https://about.txtdirect.org/hosted;type=host;code=302"
 ```
 
-## Default lookup
-The path type defaults to looking up each path as subdomain.
-Requesting a domain such as example.com/firstMatch/secondMatch would lookup `_redirect.secondmatch.firstmatch.example.com`.
-If no specific subdomain is found, it will try to fallback to wildcard. Wildcards will iterate from first subdomain to last.
+Path redirect uses two different types.  
+The **path** record configures an endpoint to use path based routing.
+Specific **host** records are then used for the redirects.
 
-The lookup order would look like this:
+By default requesting example.com/firstMatch/secondMatch looks up **_redirect.secondmatch.firstmatch.example.com**.
+
+In the case a specific record is not provided it will use wildcards.  
+Ordered from most specific to least specific such as:
 ```
 _redirect.secondmatch.firstmatch.example.com
 _redirect._.firstmatch.example.com
@@ -38,10 +40,10 @@ _redirect._._.example.com
 ```
 
 ## Options
-### Within path type
-`to=` sets the URL to fallback to, if no specific path subdomain is matched
-`root=` sets the URL redirect to, when the root path is requested
+### path
+**to=** sets the fallback URL, if no specific path subdomain is matched  
+**root=** sets the fallback URL, when the root path is requested
 
-### Within host type
-`to=` sets the URL to redirect to
-`code=` can change the redirect code used such as 301 or 302
+### host
+**to=** sets the URL to redirect to  
+**code=** can change the redirect code used such as 301 or 302

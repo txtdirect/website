@@ -5,6 +5,7 @@ title = "TXTDirect - DNS TXT-record based redirects"
 theme = "syna"
 version = "0.3.0"
 enableGitInfo = true
+disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
 
 [frontmatter]
 date = ["date", "lastmod"]
@@ -37,27 +38,17 @@ DefaultContentLanguage = "en"
     domain = "about.txtdirect.org" # Track subdomains via "*.example.com"
 
   [params.colors]
-    white = "#fff"
-    gray100 = "#f8f9fa" # light
-    gray200 = "#e9ecef"
-    gray300 = "#dee2e6"
-    gray400 = "#ced4da"
-    gray500 = "#adb5bd"
-    gray600 = "#868e96" # secondary
-    gray700 = "#495057"
-    gray800 = "#343a40" # dark
-    gray900 = "#212529"
-    black = "#000"
-    blue = "#0071bc" # primary
-    indigo = "#4b00bc"
-    purple = "#a900bc"
-    pink = "#e83e8c"
-    red = "#bc0013" # danger
-    orange = "#bc4b00"
-    yellow = "#bca900" # warning
-    green = "#13bc00" # success
-    teal = "#00bca9"
-    cyan = "#0affe6" # info
+    gray600 = "#73718D"
+    blue = "#0071bc"
+    red = "#f44336"
+    yellow = "#b58d39"
+    green = "#389d71"
+    cyan = "#293148"
+
+[[menu.main]]
+  url = "/docs/"
+  name = "Docs"
+  weight = 10
 
 [[menu.main]]
   url = "/hosted"

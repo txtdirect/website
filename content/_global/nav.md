@@ -6,6 +6,9 @@ weight = 0
 background = "dark"
 search = true
 
+[breadcrumb]
+  display = true
+
 [asset]
   image = "logo-white.svg"
   text = "TXTDirect"

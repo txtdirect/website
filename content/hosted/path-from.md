@@ -1,48 +1,40 @@
 +++
 fragment = "item"
-#disabled = false
 date = "2018-09-08"
 weight = 320
-background = "secondary"
+background = "light"
 align = "left"
 
 subtitle = "Path based redirect with custom order"
 
-pre = "*s.txtdirect.org/hosted*"
-post = "*about.txtdirect.org/hosted*"
+pre = "*s.txtdirect.org/v2/docs/*"
+post = "*docs.txtdirect.org/v2*"
 
 [asset]
   icon = "fas fa-arrow-down"
 +++
 
-* Point your chosen subdomain by CNAME to `txtdirect.io.`
-* Create a TXT record with the subdomain `_redirect`
-* Use the open TXTDirect spec to set your specific repository
+* Point your chosen subdomain CNAME to **txtd.io.**
+* Create a TXT record with the subdomain **_redirect**
+* Use the open TXTDirect spec to configure your redirect
 
 ```text
-www.txtdirect.org               86000 IN CNAME   txtdirect.io.
+s.txtdirect.org                 86000 IN CNAME   txtd.io.
 _redirect.s.txtdirect.org       86400 IN TXT     "v=txtv0;from=/$2/$1/;to=https://about.txtdirect.org;root=https://about.txtdirect.org;type=path"
+
+_redirect.v2.docs.s.txtdirect.org   86400 IN TXT     "v=txtv0;to=https://docs.txtdirect.org/v2;type=host;code=302"
+
 _redirect._._.s.txtdirect.org   86400 IN TXT     "v=txtv0;to=https://about.txtdirect.org/hosted;type=host;code=302"
 ```
 
-## Custom lookup
-When `from=` is defined with a simplified regex such as `/$2/$1/` the lookup order can be customized.
-Requesting a domain such as example.com/firstMatch/secondMatch would lookup `_redirect.firstmatch.secondmatch.example.com`.
-If no specific subdomain is found, it will try to fallback to wildcard. Wildcards will iterate from first subdomain to last.
-
-The lookup order would look like this:
-```
-_redirect.firstmatch.secondmatch.example.com
-_redirect._.secondmatch.example.com
-_redirect._._.example.com
-```
+Instead of the default lookup order TXTDirect allows a custom order to be set using the **from**. Using **/$2/$1** would reverse the default order.
 
 ## Options
-### Within path type
-`to=` sets the URL to fallback to, if no specific path subdomain is matched
-`root=` sets the URL redirect to, when the root path is requested
-`from=` enables reordering using a simplified regex such as `/$2/$1/`
+### path
+**to=** sets the fallback URL, if no specific path subdomain is matched  
+**root=** sets the fallback URL, when the root path is requested
+**from=** enables reordering such as **/$2/$1/**
 
-### Within host type
-`to=` sets the URL to redirect to
-`code=` can change the redirect code used such as 301 or 302
+### host
+**to=** sets the URL to redirect to  
+**code=** can change the redirect code used such as 301 or 302
