@@ -9,7 +9,7 @@ title = "Path"
 +++
 
 ## Path Type
-**Path based redirect using default ordering**  
+**Path redirect using default ordering**  
 *example.com/firstMatch/secondMatch -> about.example.com*
 *example.com/firstMatch/noMatch -> fallback or 404*
 ```
@@ -18,7 +18,7 @@ _redirect.example.com                         3600 IN TXT    "v=txtv0;type=path"
 _redirect.secondmatch.firstmatch.example.com  3600 IN TXT    "v=txtv0;to=https://about.example.com/;type=host"
 ```
 
-**Path based redirect using explicit ordering**  
+**Path redirect using explicit ordering**  
 *example.com/firstMatch/secondMatch -> about.example.com*
 *example.com/firstMatch/noMatch -> fallback or 404*
 ```
@@ -27,7 +27,7 @@ _redirect.example.com                         3600 IN TXT    "v=txtv0;from=/$1/$
 _redirect.secondmatch.firstmatch.example.com  3600 IN TXT    "v=txtv0;to=https://about.example.com/;type=host"
 ```
 
-**Path based redirect using modified ordering**  
+**Path redirect using modified ordering**  
 *example.com/firstMatch/secondMatch -> about.example.com*
 *example.com/firstMatch/noMatch -> defaults or 404*
 ```
@@ -36,7 +36,7 @@ _redirect.example.com                         3600 IN TXT    "v=txtv0;from=/$2/$
 _redirect.firstmatch.secondmatch.example.com  3600 IN TXT    "v=txtv0;to=https://about.example.com/;type=host"
 ```
 
-**Path based redirect using path record fallback for root/index**  
+**Path redirect using path record fallback for root/index**  
 *example.com/ -> root.example.com*
 ```
 example.com                                   3600 IN A      127.0.0.1
@@ -44,14 +44,14 @@ _redirect.example.com                         3600 IN TXT    "v=txtv0;from=/$1/$
 _redirect.secondmatch.firstmatch.example.com  3600 IN TXT    "v=txtv0;to=https://about.example.com/;type=host"
 ```
 
-**Path based redirect using path record fallback**  
+**Path redirect using path record fallback**  
 *example.com/firstMatch/noMatch -> fallback.example.com*
 ```
 example.com                                   3600 IN A      127.0.0.1
 _redirect.example.com                         3600 IN TXT    "v=txtv0;to=https://fallback.example.com;type=path"
 ```
 
-**Path based redirect using wildcard**  
+**Path redirect using wildcard**  
 *example.com/firstMatch/secondMatch -> about.example.com*
 *example.com/firstMatch/randomString -> wildcard.example.com*
 *example.com/randomString/randomString -> full-wildcard.example.com*

@@ -5,7 +5,7 @@ weight = 310
 background = "white"
 align = "left"
 
-subtitle = "Path based redirect (shortener)"
+subtitle = "Path redirect (shortener)"
 
 pre = "*s.txtdirect.org/hosted*"
 post = "*about.txtdirect.org/hosted*"
@@ -39,11 +39,11 @@ _redirect._.firstmatch.example.com
 _redirect._._.example.com
 ```
 
-## Options
-### path
+### Options
+#### path
 **to=** sets the fallback URL, if no specific path subdomain is matched  
 **root=** sets the fallback URL, when the root path is requested
 
-### host
+#### host
 **to=** sets the URL to redirect to  
 **code=** can change the redirect code used such as 301 or 302

@@ -5,10 +5,10 @@ weight = 230
 background = "light"
 align = "left"
 
-subtitle = "Host based redirect to **www** subdomain"
+subtitle = "Host redirect to **www** subdomain"
 
-pre = "*www.txtdirect.org*"
-post = "*about.txtdirect.org*"
+pre = "*txtdirect.org*"
+post = "*www.txtdirect.org*"
 
 [asset]
   icon = "fas fa-arrow-down"

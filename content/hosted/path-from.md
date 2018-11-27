@@ -5,7 +5,7 @@ weight = 320
 background = "light"
 align = "left"
 
-subtitle = "Path based redirect with custom order"
+subtitle = "Path redirect with custom order"
 
 pre = "*s.txtdirect.org/v2/docs/*"
 post = "*docs.txtdirect.org/v2*"
@@ -29,12 +29,12 @@ _redirect._._.s.txtdirect.org   86400 IN TXT     "v=txtv0;to=https://about.txtdi
 
 Instead of the default lookup order TXTDirect allows a custom order to be set using the **from**. Using **/$2/$1** would reverse the default order.
 
-## Options
-### path
+### Options
+#### path
 **to=** sets the fallback URL, if no specific path subdomain is matched  
 **root=** sets the fallback URL, when the root path is requested
 **from=** enables reordering such as **/$2/$1/**
 
-### host
+#### host
 **to=** sets the URL to redirect to  
 **code=** can change the redirect code used such as 301 or 302
