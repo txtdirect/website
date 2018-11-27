@@ -2,7 +2,7 @@
 fragment = "item"
 date = "2018-09-08"
 weight = 420
-background = "white"
+background = "light"
 align = "left"
 
 subtitle = "Container vanity url for a specific tag"
@@ -24,6 +24,6 @@ _redirect.c.txtdirect.org          86400 IN TXT     "v=txtv0;to=https://gcr.io/t
 ```
 
 ### Options
-**to=** sets the backend URL for the registry/container 
-**website=** (non container traffic) sets the general fallback URL
+**to=** sets the backend URL for the registry/container  
+**website=** (non container traffic) sets the general fallback URL  
 **root=** (non container traffic) sets the fallback URL, when the root path is requested
