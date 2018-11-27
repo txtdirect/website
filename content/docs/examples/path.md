@@ -36,7 +36,7 @@ _redirect.example.com                         3600 IN TXT    "v=txtv0;from=/$2/$
 _redirect.firstmatch.secondmatch.example.com  3600 IN TXT    "v=txtv0;to=https://about.example.com/;type=host"
 ```
 
-**Path based redirect fallback on root/index**  
+**Path based redirect using path record fallback for root/index**  
 *example.com/ -> root.example.com*
 ```
 example.com                                   3600 IN A      127.0.0.1
@@ -44,7 +44,7 @@ _redirect.example.com                         3600 IN TXT    "v=txtv0;from=/$1/$
 _redirect.secondmatch.firstmatch.example.com  3600 IN TXT    "v=txtv0;to=https://about.example.com/;type=host"
 ```
 
-**Path based redirect path record fallback**  
+**Path based redirect using path record fallback**  
 *example.com/firstMatch/noMatch -> fallback.example.com*
 ```
 example.com                                   3600 IN A      127.0.0.1
@@ -65,21 +65,7 @@ _redirect._._.example.com                     3600 IN TXT    "v=txtv0;to=https:/
 ```
 
 <!--
-*example.com/firstMatch/secondMatch -> about.example.com/secondMatch/firstMatch*
-*example.com/firstMatch/noMatch -> 404*
-```
-example.com                                   3600 IN A      127.0.0.1
-_redirect.example.com                         3600 IN TXT    "v=txtv0;from=/$1/$2;type=path"
-_redirect.secondmatch.firstmatch.example.com  3600 IN TXT    "v=txtv0;to=https://about.example.com/{2}/{1};type=host"
-```
 
-*example.com/firstMatch/secondMatch -> about.example.com/secondMatch/firstMatch*
-*example.com/firstMatch/noMatch -> fallback.example.com*
-```
-example.com                                   3600 IN A      127.0.0.1
-_redirect.example.com                         3600 IN TXT    "v=txtv0;from=/$1/$2;to=https://fallback.example.com;type=path"
-_redirect.secondmatch.firstmatch.example.com  3600 IN TXT    "v=txtv0;to=https://about.example.com/{2}/{1};type=host"
-```
 
 *example.com/firstMatch/secondMatch -> about.example.com*
 *example.com/firstMatch/noMatch -> fallback.example.com*
@@ -89,12 +75,4 @@ _redirect.example.com                         3600 IN TXT    "v=txtv0;re=\/(.*)\
 _redirect.secondmatch.firstmatch.example.com  3600 IN TXT    "v=txtv0;to=https://about.example.com;type=host"
 ```
 
-*example.com/some/thing -> catchall.example.com*
-*example.com/another/thing -> catchall.example.com*
-*example.com/so/many/things -> catchall.example.com/things*
-```
-example.com                           3600 IN A      127.0.0.1
-_redirect.example.com                 3600 IN TXT    "v=txtv0;from=/$1/$2;type=path"
-_redirect._._.example.com             3600 IN TXT    "v=txtv0;to=https://catchall.example.com{uri};type=host"
-```
 -->

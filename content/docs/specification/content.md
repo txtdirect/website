@@ -63,9 +63,9 @@ https://tools.ietf.org/html/rfc3986#page-11
 
 * Key: **to**
 * Recommended
-* Default: Fallbacks such as **www** or **redirect** config
+* Default: Fallback to **www** or **redirect** config
 * Permitted values: "absolute|relative URL"
-* Example: "to=https://example.com "
+* Example: "to=https://example.com"
 
 **Redirect Code**  
 
@@ -74,6 +74,7 @@ https://tools.ietf.org/html/rfc3986#page-11
 * Default: "301"
 * Permitted values: "301|302"
 * Example: "code=301"
+
 
 # Path Type
 **Type**  
@@ -94,18 +95,17 @@ https://tools.ietf.org/html/rfc3986#page-11
 
 * Key: **to**
 * Recommended
-* Default: Fallbacks such as **www** or **redirect** config
+* Default: Fallback to **www** or **redirect** config
 * Permitted values: "absolute|relative URL"
-* Example: "to=https://example.com "
-
+* Example: "to=https://example.com"
 
 **Root Redirect URL**  
 
 * Key: **root**
 * Recommended
-* Default: Fallbacks such as **www** or **redirect** config
+* Default: Fallback to **www** or **redirect** config
 * Permitted values: "absolute|relative URL"
-* Example: "to=https://example.com "
+* Example: "to=https://example.com"
 
 **Simplified Regex**  
 
@@ -119,6 +119,49 @@ https://tools.ietf.org/html/rfc3986#page-11
 * Permitted values: "regex/ordered regex"
 * Note: "Named regexes can be used to reorder the results. a > b > b1 > b2"
 * Example: "`from=\\?query=(?P<a>[^&]+)\\&more=(?P<b>[^&]+)`"
+
+
+# Dockerv2 Type
+**Type**  
+
+* Key: **type**
+* Mandatory
+* Permitted values: "dockerv2"
+* Example: "type=dockerv2"
+
+**Version**  
+
+* Key: **v**
+* Mandatory
+* Permitted values: "txtv0"
+* Example: "v=txtv0"
+
+**Backend URL**  
+
+* Key: **to**
+* Mandatory for correct functioning
+* Permitted values: "absolute registry URL"
+* Note: "For non container traffic it will fallback to *website*, *www* or *redirect* config"
+* Example: "to=https://gcr.io/ "
+* Example: "to=https://gcr.io/txtdirect/container:tag"
+
+**Root Redirect URL**  
+
+* Key: **root**
+* Recommended
+* Default: Fallback to **www** or **redirect** config
+* Permitted values: "absolute|relative URL"
+* Example: "to=https://example.com"
+
+**Website Redirect URL**  
+
+* Key: **website**
+* Recommended
+* Default: Fallback to **www** or **redirect** config
+* Note: "Non container traffic redirect"
+* Permitted values: "absolute|relative URL"
+* Example: "to=https://about.txtdirect.org/docs/"
+
 
 # Gometa Type
 **Type**  
@@ -141,7 +184,7 @@ https://tools.ietf.org/html/rfc3986#page-11
 * Recommended
 * Default: Fallbacks such as **www** or **redirect** config
 * Permitted values: "absolute repository URL"
-* Example: "to=https://github.com/txtdirect/ "
+* Example: "to=https://github.com/txtdirect/"
 
 **Repository Type**  
 
@@ -149,7 +192,8 @@ https://tools.ietf.org/html/rfc3986#page-11
 * Recommended
 * Default: **git**
 * Permitted values: "git|bzr|fossil|hg|svn"
-* Example: "to=https://github.com/txtdirect/ "
+* Example: "to=https://github.com/txtdirect/"
+
 
 # Proxy Type
 **Type**  
@@ -171,4 +215,4 @@ https://tools.ietf.org/html/rfc3986#page-11
 * Key: **to**
 * Mandatory
 * Permitted values: "absolute URL"
-* Example: "to=https://example.com/subpage/ "
+* Example: "to=https://example.com/subpage/"

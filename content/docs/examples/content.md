@@ -15,4 +15,5 @@ In the examples "txtdirect.example.com" is your hosted TXTDirect instance.
 
 It is recommended to use CNAMEs to reference this instance, where possible.
 
-For more details on the actual spec take a look at our [TXT-record specification](/docs/specification/).
+These are simplified examples.  
+For an overview of the full TXT record configuration take a look at our [specification](/docs/specification/).

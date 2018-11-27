@@ -43,7 +43,7 @@ txtdirect {
 **Enable path based redirects:**  
 ```
 txtdirect {
-    enable path
+    enable host path
 }
 ```
 
