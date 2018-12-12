@@ -6,10 +6,11 @@ weight = 205
 background = "white"
 align = "center"
 
-subtitle= "Test our hosted service for free and easily upgrade to a plan that fits your needs!"
+title = "Test for free"
+subtitle = "Easily upgrade to a plan that fits your needs!"
 
 [[buttons]]
-  text = "Upgrade to payed"
+  text = "Upgrade"
   url = "/subscription/"
   color = "primary"
 +++
