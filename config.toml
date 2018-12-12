@@ -54,9 +54,14 @@ DefaultContentLanguage = "en"
   weight = 10
 
 [[menu.main]]
-  url = "/hosted"
+  url = "/hosted/"
   name = "Hosted Service"
-  weight = 10
+  weight = 20
+
+[[menu.main]]
+  url = "/subscription/"
+  name = "Subscription"
+  weight = 30
 
 [[menu.copyright_footer]]
   url = "/imprint"

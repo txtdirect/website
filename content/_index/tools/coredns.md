@@ -2,5 +2,5 @@
 weight = 20
 
 [asset]
-  image = "hugo.svg"
+  image = "coredns.png"
 +++

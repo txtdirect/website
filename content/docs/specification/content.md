@@ -139,10 +139,10 @@ https://tools.ietf.org/html/rfc3986#page-11
 **Backend URL**  
 
 * Key: **to**
-* Mandatory for correct functioning
+* Mandatory
 * Permitted values: "absolute registry URL"
 * Note: "For non container traffic it will fallback to *website*, *www* or *redirect* config"
-* Example: "to=https://gcr.io/ "
+* Example: "to=https://gcr.io/"
 * Example: "to=https://gcr.io/txtdirect/container:tag"
 
 **Root Redirect URL**  

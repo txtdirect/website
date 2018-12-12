@@ -7,7 +7,7 @@ background = "dark"
 search = true
 
 [breadcrumb]
-  display = false
+  display = true
 
 [asset]
   image = "logo-white.svg"
