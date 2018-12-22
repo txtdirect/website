@@ -10,11 +10,11 @@ highlight = true
 button_text = "Subscribe to Premium"
 
 [[features]]
-  text = "**Hosted** Priority usage"
+  text = "**Hosting** Priority Infrastructure"
   icon = "fas fa-check"
 
 [[features]]
-  text = "**Support** Via email support"
+  text = "**Support** Email support"
   icon = "fas fa-check"
 
 [[features]]

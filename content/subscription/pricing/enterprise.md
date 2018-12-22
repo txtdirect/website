@@ -9,7 +9,7 @@ button_text = "Contact us"
 button_url = "https://about.rekkur.com/?event=contact:update&message=TXTDirect txtd.io Enterprise plan%0ALet us know what you need:%0A"
 
 [[features]]
-  text = "**Hosted** Priority usage"
+  text = "**Hosting** Priority infrastructure"
   icon = "fas fa-check"
 
 [[features]]
@@ -17,10 +17,10 @@ button_url = "https://about.rekkur.com/?event=contact:update&message=TXTDirect t
   icon = "fas fa-check"
 
 [[features]]
-  text = "**Basic** Access to enterprise releases"
+  text = "**Releases** Access to enterprise releases"
   icon = "fas fa-check"
 
 [[features]]
-  text = "**Exposure** Show yourself as sponsor"
+  text = "**Exposure** Showcase yourself as sponsor"
   icon = "fas fa-check"
 +++

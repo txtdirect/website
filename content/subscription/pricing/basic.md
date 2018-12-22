@@ -9,14 +9,14 @@ currency = "usd"
 button_text = "Subscribe to basic"
 
 [[features]]
-  text = "**Hosted** Personal usage"
+  text = "**Hosting** Personal usage"
   icon = "fas fa-check"
 
 [[features]]
-  text = "**Support** Via public issue tracker"
+  text = "**Support** Public issue tracker"
   icon = "fas fa-check"
 
 [[features]]
-  text = "**Basic** Access to releases"
+  text = "**Releases** Public releases"
   icon = "fas fa-check"
 +++
