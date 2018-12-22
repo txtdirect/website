@@ -17,10 +17,10 @@ button_url = "https://about.rekkur.com/?event=contact:update&message=TXTDirect t
   icon = "fas fa-check"
 
 [[features]]
-  text = "**Releases** Access to enterprise releases"
+  text = "**Releases** Enterprise releases"
   icon = "fas fa-check"
 
 [[features]]
-  text = "**Exposure** Showcase yourself as sponsor"
+  text = "**Exposure** Showcased as sponsor"
   icon = "fas fa-check"
 +++

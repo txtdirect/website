@@ -18,6 +18,6 @@ button_text = "Subscribe to Premium"
   icon = "fas fa-check"
 
 [[features]]
-  text = "**Basic** Access to business releases"
+  text = "**Releases** Business releases"
   icon = "fas fa-check"
 +++
