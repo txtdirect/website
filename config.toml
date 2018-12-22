@@ -36,7 +36,7 @@ DefaultContentLanguage = "en"
 
   # Piwik tracking
   [params.analytics.piwik]
-    url = "https://stats.seetheprogress.com"
+    url = "https://stats.okkur.net"
     id = "12"
     domain = "about.txtdirect.org" # Track subdomains via "*.example.com"
 

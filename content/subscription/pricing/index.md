@@ -1,8 +1,8 @@
 +++
 fragment = "pricing"
 weight = 100
-background = "secondary"
+background = "light"
 
-title = "Subscribe to our payed TXTDirect Plans"
-subtitle = "Get more out of TXTDirect"
+title = "Get more out of TXTDirect"
+subtitle = "Reliable and distributed hosting provided by <a href=\"https://about.rekkur.com/\" target=\"_blank\">Rekkur Solutions GmbH</a>"
 +++
