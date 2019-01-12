@@ -3,8 +3,7 @@ weight = 20
 
 title = "Premium plan"
 
-price = "400000"
-price_text = "$4000/y"
+price = "$4000/y"
 currency = "usd"
 highlight = true
 button_text = "Subscribe to Premium"
