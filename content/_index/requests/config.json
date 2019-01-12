@@ -1,44 +1,64 @@
 {
-  "type": "line",
-  "data": {
-      "labels": ["Sep 18", "Oct 18", "Nov 18", "Dec 18"],
-      "datasets": [{
+    "type": "line",
+    "data": {
+      "labels": [
+        "Sep 18",
+        "Oct 18",
+        "Nov 18",
+        "Dec 18"
+      ],
+      "datasets": [
+        {
           "label": "Requests",
-          "data": [710000, 820000, 1150000, 1400000],
+          "data": [
+            710000,
+            820000,
+            1150000,
+            1400000
+          ],
           "backgroundColor": "#00838f",
           "borderColor": "#f8f9fa",
-
           "borderWidth": 1
-      }]
-  },
-  "options": {
-    "legend": {
-          "display": false
+        }
+      ]
     },
-    "tooltips": {
+    "options": {
+      "legend": {
+        "display": false
+      },
+      "tooltips": {
         "displayColors": false,
         "backgroundColor": "#f8f9fa",
         "titleFontColor": "#000",
         "bodyFontColor": "#000"
-    },
+      },
       "scales": {
-          "yAxes": [{
+        "yAxes": [
+          {
             "gridLines": {
               "color": "#6c757d"
             },
-              "ticks": {
-                  "beginAtZero":false,
-                  "fontColor": "#fff"
-              }
-          }],
-          "xAxes": [{
-                "gridLines": {
-                  "color": "#6c757d"
-                },
             "ticks": {
-                "fontColor": "#fff"
+              "beginAtZero": false,
+              "fontColor": "#fff"
+            },
+            "scaleLabel": {
+              "display": true,
+              "labelString": "Requests per month",
+              "fontColor": "#fff"
             }
-        }]
+          }
+        ],
+        "xAxes": [
+          {
+            "gridLines": {
+              "color": "#6c757d"
+            },
+            "ticks": {
+              "fontColor": "#fff"
+            }
+          }
+        ]
       }
+    }
   }
-}
