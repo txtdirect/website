@@ -18,7 +18,7 @@ __Only publicly available containers are currently supported__
 *container.example.com/txtdirect:tag -> gcr.io/some/container:tag*
 ```
 container.example.com             3600 IN CNAME  txtdirect.example.com
-_redirect.container.example.com   3600 IN TXT    "v=txtv0;https://gcr.io/some/container;type=dockerv2"
+_redirect.container.example.com   3600 IN TXT    "v=txtv0;to=https://gcr.io/some/container;type=dockerv2"
 ```
 
 **Container vanity redirect with enforced tag**  
@@ -26,7 +26,7 @@ _redirect.container.example.com   3600 IN TXT    "v=txtv0;https://gcr.io/some/co
 *container.example.com/txtdirect:123 -> gcr.io/some/container:tag*
 ```
 container.example.com             3600 IN CNAME  txtdirect.example.com
-_redirect.container.example.com   3600 IN TXT    "v=txtv0;https://gcr.io/some/container:tag;type=dockerv2"
+_redirect.container.example.com   3600 IN TXT    "v=txtv0;to=https://gcr.io/some/container:tag;type=dockerv2"
 ```
 
 **Full platform container vanity redirects**  
@@ -35,5 +35,5 @@ _redirect.container.example.com   3600 IN TXT    "v=txtv0;https://gcr.io/some/co
 *gcr.example.com/\* -> gcr.io/\**
 ```
 gcr.example.com             3600 IN CNAME  txtdirect.example.com
-_redirect.gcr.example.com   3600 IN TXT    "v=txtv0;https://gcr.io;type=dockerv2"
+_redirect.gcr.example.com   3600 IN TXT    "v=txtv0;to=https://gcr.io;type=dockerv2"
 ```
