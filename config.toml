@@ -39,12 +39,11 @@ DefaultContentLanguage = "en"
     domain = "about.txtdirect.org" # Track subdomains via "*.example.com"
 
   [params.colors]
-    gray600 = "#73718D"
-    blue = "#0071bc"
-    red = "#f44336"
-    yellow = "#b58d39"
-    green = "#389d71"
-    cyan = "#293148"
+    primary = "#0071bc"
+    danger = "#f44336"
+    warning = "#b58d39"
+    success = "#389d71"
+    info = "#293148"
 
 [[menu.main]]
   url = "/docs/"
