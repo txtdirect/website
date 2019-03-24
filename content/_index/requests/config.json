@@ -5,8 +5,10 @@
         "Sep 18",
         "Oct 18",
         "Nov 18",
-        "Dec 18"
-      ],
+        "Dec 18",
+        "Jan 19",
+        "Feb 19"
+        ],
       "datasets": [
         {
           "label": "Requests",
@@ -14,7 +16,9 @@
             710000,
             820000,
             1150000,
-            1400000
+            1400000,
+            1500000,
+            1600000
           ],
           "backgroundColor": "#00838f",
           "borderColor": "#f8f9fa",
