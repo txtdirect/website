@@ -49,8 +49,8 @@ https://tools.ietf.org/html/rfc3986#page-11
 
 ## Description
 
-`host` is our most simple type. Using `host` you can redirect an incoming request to a specific endpoint with a custom status code defined in the TXT record.
-For example records you can check [host](https://about.txtdirect.org/docs/examples/#host) in the examples section.
+`host` is the most simple type. Using `host` you can redirect an incoming request to a specific endpoint with a custom status code defined in the TXT record.
+For example records you can check [host](https://about.txtdirect.org/docs/examples/#host).
 
 ## Record fields
 
@@ -91,15 +91,19 @@ For example records you can check [host](https://about.txtdirect.org/docs/exampl
 
 ## Description
 
-Sometimes you may need to redirect a request separate endpoints based on the request's path content. `path` type runs a regular expression which can be our default regex or a custom regex from the TXT record. Then uses the matches from that expression to generate a zone address and find final record to use it for redirecting the request.
+Sometimes you may need to redirect a request coming into a single host/domain to separate locations based on the request's path. One common use-case is a URL shortener.
+`path` type extracts each directory by default. Each directory is used to generate a new sub zone to fetch the TXT record from. To reorder the default order you can use the `from=` field.
 
-`path` also contains some additional configuration to process the request's path. For example by using `from=` field inside a `path` record you can define how we should order the matches from the expression on the request's path to generate the next zone address. Or add the `re=` field to use a custom regex instead of our default on the request's path.
+`path` also contains some additional configuration to process the request's path. The `re=` field enables use of a custom regex to control which data is used to construct the sub zones, where TXT record data is fetched.
 
 ### Path Sanitization
 
-To use the request's path for generating the zone address we need normalize the path into allowed DNS chars. For example we need to replace `.`(dot) into `-`(dash) to keep each match in its own zone. You can visit [RFC1034](https://tools.ietf.org/html/rfc1034) for more information about the allowed chars.
+To use the request's path for generating the zone address it needs to be normalized into allowed DNS chars. For example `.`(dot) is replaced with `-`(dash) to keep each match in its own zone. You can visit [RFC1034](https://tools.ietf.org/html/rfc1034) for more information about the allowed chars.
 
-After this step we run our default regex or the custom regex from `re=` field on the request's path. If `from=` is not available we first revert order of matches from the expression then join them with request's host to generate the next zone in the chain. But if `from=` is availabe, we use the given order instead of reverting.
+The request's path is used to construct the zone address, which provides the redirect data used for this specific path. By default each directory is extracted and the order reverted meaning the less specific zone will come first:
+`example.com/firstDirectory/secondDirectory/ -> secondDirectory.firstDirectory.example.com`
+A custom ordering can be achieved by using the `from=` field. It will reorder the sub zones accordingly.
+If a custom regex is configured with the `re=` field each match is used as a sub zone. Ordering can be modified by using named matches. The default ordering will use the first match as the first sub zone and continue until there are no new matches.
 
 ## Record Fields
 
@@ -139,7 +143,7 @@ After this step we run our default regex or the custom regex from `re=` field on
 
 - Key: **from**
 - Permitted values: "simplified regex"
-- Example: "from=/$2/$1/\$3"
+- Example: "from=/$2/$1/$3"
 
 **Regex**
 
@@ -154,9 +158,14 @@ After this step we run our default regex or the custom regex from `re=` field on
 
 ## Description
 
-To redirect request from Docker CLI to a specific docker image or a docker registry you can use `dockerv2` type. The difference between a Docker CLI request and a normal request is that Docker CLI sends a couple of request with different paths to fetch some information like image tags, manifests and etc. about the image. To handle these requests we use docker's v2 API to fetch the data for each request.
+The `dockerv2` type enables vanity URLs for your container images. Using your own URl for container images enables easier switching between your backend infrastructure/storage and adds more control.
+The type implements the Docker registry API v2 and redirects requests for both metadata and image blobs to the backend storage. All data besides the redirect is therefore served by your underlying infrastructure such as Google Container Registry (gcr.io).
 
-You can point to a docker registry or a specific image inside your record. With pointing to a registry you can have vanity urls for all the images on that registry instead of only an image.
+The upstream endpoint used for `to=` can be different depending on the use case.
+
+1. Image link including a specific tag enables serving this specific tag under various image names and tags.
+2. Image link enables serving available tags for a specific image under various image names.
+3. Referencing the root of a container registry enables the full serving of the registry under this specific domain.
 
 ## Record Fields
 
