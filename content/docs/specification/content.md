@@ -9,30 +9,30 @@ title = "Specification"
   sticky = true
 +++
 
-*The specification can be considered stable, but slight changes might happen in the future.*
+_The specification can be considered stable, but slight changes might happen in the future._
 
-
-# General Requirements  
+# General Requirements
 
 **TXT record**
 
-* Record must not exceed 255 characters
-* Record key-value pairs must be delimited by semicolons ";"
-* Key and value must be encoded using utf8
-* Punycode for domain names should be used
-* Ordering key-value pairs can be done
-* Arbitrary data/non key-value pairs can be used and will be ignored
+- Record must not exceed 255 characters
+- Record key-value pairs must be delimited by semicolons ";"
+- Key and value must be encoded using utf8
+- Punycode for domain names should be used
+- Ordering key-value pairs can be done
+- Arbitrary data/non key-value pairs can be used and will be ignored
 
-**Location/Zone**  
+**Location/Zone**
 
-* TXT record must be accessible under the subdomain "_redirect"
+- TXT record must be accessible under the subdomain "\_redirect"
 
 **URLs**
 
-* All URLs must be encoded
-* ";" must be escaped as "%3B"
+- All URLs must be encoded
+- ";" must be escaped as "%3B"
 
 Examples:
+
 ```; -> %3B
 ? -> %3F
 = -> %3D
@@ -43,151 +43,203 @@ Further links about URL encoding:
 https://en.wikipedia.org/wiki/Percent-encoding  
 https://tools.ietf.org/html/rfc3986#page-11
 
-
 ---
+
 # Host Type
-**Type**  
 
-* Key: **type**
-* Mandatory
-* Permitted values: "host"
-* Example: "type=host"
+## Description
 
-**Version**  
+`host` is the most simple type. Using `host` you can redirect an incoming request to a specific endpoint with a custom status code defined in the TXT record.
+For example records you can check [host](https://about.txtdirect.org/docs/examples/#host).
 
-* Key: **v**
-* Mandatory
-* Permitted values: "txtv0"
-* Example: "v=txtv0"
+## Record fields
 
-**Redirect URL**  
+**Type**
 
-* Key: **to**
-* Recommended
-* Default: Fallback to **www** or **redirect** config
-* Permitted values: "absolute|relative URL"
-* Example: "to=https://example.com"
-* Example: "to=/example/"
+- Key: **type**
+- Mandatory
+- Permitted values: "host"
+- Example: "type=host"
 
-**Redirect Code**  
+**Version**
 
-* Key: **code**
-* Optional
-* Default: "302"
-* Permitted values: "301|302"
-* Example: "code=301"
+- Key: **v**
+- Mandatory
+- Permitted values: "txtv0"
+- Example: "v=txtv0"
+
+**Redirect URL**
+
+- Key: **to**
+- Recommended
+- Default: Fallback to **www** or **redirect** config
+- Permitted values: "absolute|relative URL"
+- Example: "to=https://example.com"
+- Example: "to=/example/"
+
+**Redirect Code**
+
+- Key: **code**
+- Optional
+- Default: "302"
+- Permitted values: "301|302"
+- Example: "code=301"
 
 ---
+
 # Path Type
-**Type**  
 
-* Key: **type**
-* Mandatory
-* Permitted values: "path"
-* Example: "type=path"
+## Description
 
-**Version**  
+Sometimes you may need to redirect a request coming into a single host/domain to separate locations based on the request's path. One common use-case is a URL shortener.
+`path` type extracts each directory by default. Each directory is used to generate a new sub zone to fetch the TXT record from. To reorder the default order you can use the `from=` field.
 
-* Key: **v**
-* Mandatory
-* Permitted values: "txtv0"
-* Example: "v=txtv0"
+`path` also contains some additional configuration to process the request's path. The `re=` field enables use of a custom regex to control which data is used to construct the sub zones, where TXT record data is fetched.
 
-**Redirect URL**  
+### Path Sanitization
 
-* Key: **to**
-* Recommended
-* Default: Fallback to **www** or **redirect** config
-* Permitted values: "absolute|relative URL"
-* Example: "to=https://example.com"
-* Example: "to=/example/"
+To use the request's path for generating the zone address it needs to be normalized into allowed DNS chars. For example `.`(dot) is replaced with `-`(dash) to keep each match in its own zone. You can visit [RFC1034](https://tools.ietf.org/html/rfc1034) for more information about the allowed chars.
 
-**Root Redirect URL**  
+The request's path is used to construct the zone address, which provides the redirect data used for this specific path. By default each directory is extracted and the order reverted meaning the less specific zone will come first:
+`example.com/firstDirectory/secondDirectory/ -> secondDirectory.firstDirectory.example.com`
+A custom ordering can be achieved by using the `from=` field. It will reorder the sub zones accordingly.
+If a custom regex is configured with the `re=` field each match is used as a sub zone. Ordering can be modified by using named matches. The default ordering will use the first match as the first sub zone and continue until there are no new matches.
 
-* Key: **root**
-* Recommended
-* Default: Fallback to **www** or **redirect** config
-* Permitted values: "absolute|relative URL"
-* Example: "to=https://example.com"
-* Example: "to=/example/"
+## Record Fields
 
-**Simplified Regex**  
+**Type**
 
-* Key: **from**
-* Permitted values: "simplified regex"
-* Example: "from=/$2/$1/$3"
+- Key: **type**
+- Mandatory
+- Permitted values: "path"
+- Example: "type=path"
 
-**Regex**  
+**Version**
 
-* Key: **re**
-* Permitted values: "regex/ordered regex"
-* Note: "Named regexes can be used to reorder the results. a > b > b1 > b2"
-* Example: "`from=\\?query=(?P<a>[^&]+)\\&more=(?P<b>[^&]+)`"
+- Key: **v**
+- Mandatory
+- Permitted values: "txtv0"
+- Example: "v=txtv0"
+
+**Redirect URL**
+
+- Key: **to**
+- Recommended
+- Default: Fallback to **www** or **redirect** config
+- Permitted values: "absolute|relative URL"
+- Example: "to=https://example.com"
+- Example: "to=/example/"
+
+**Root Redirect URL**
+
+- Key: **root**
+- Recommended
+- Default: Fallback to **www** or **redirect** config
+- Permitted values: "absolute|relative URL"
+- Example: "to=https://example.com"
+- Example: "to=/example/"
+
+**Simplified Regex**
+
+- Key: **from**
+- Permitted values: "simplified regex"
+- Example: "from=/$2/$1/$3"
+
+**Regex**
+
+- Key: **re**
+- Permitted values: "regex/ordered regex"
+- Note: "Named regexes can be used to reorder the results. a > b > b1 > b2"
+- Example: "`from=\\?query=(?P<a>[^&]+)\\&more=(?P<b>[^&]+)`"
 
 ---
+
 # Dockerv2 Type
-**Type**  
 
-* Key: **type**
-* Mandatory
-* Permitted values: "dockerv2"
-* Example: "type=dockerv2"
+## Description
 
-**Version**  
+The `dockerv2` type enables vanity URLs for your container images. Using your own URl for container images enables easier switching between your backend infrastructure/storage and adds more control.
+The type implements the Docker registry API v2 and redirects requests for both metadata and image blobs to the backend storage. All data besides the redirect is therefore served by your underlying infrastructure such as Google Container Registry (gcr.io).
 
-* Key: **v**
-* Mandatory
-* Permitted values: "txtv0"
-* Example: "v=txtv0"
+The upstream endpoint used for `to=` can be different depending on the use case.
 
-**Backend URL**  
+1. Image link including a specific tag enables serving this specific tag under various image names and tags.
+2. Image link enables serving available tags for a specific image under various image names.
+3. Referencing the root of a container registry enables the full serving of the registry under this specific domain.
 
-* Key: **to**
-* Mandatory
-* Permitted values: "absolute registry URL"
-* Note: "For non container traffic it will fallback to *website*, *www* or *redirect* config"
-* Example: "to=https://gcr.io/" *pass through namespaces, container and tag*
-* Example: "to=https://gcr.io/txtdirect/container" *pass through tag*
-* Example: "to=https://gcr.io/txtdirect/container:tag" *force specific tag*
+## Record Fields
 
-**Website Redirect URL**  
+**Type**
 
-* Key: **website**
-* Recommended
-* Default: Fallback to **www** or **redirect** config
-* Note: "Non container traffic redirect"
-* Permitted values: "absolute|relative URL"
-* Example: "to=https://about.txtdirect.org/docs/"
-* Example: "to=/docs/"
+- Key: **type**
+- Mandatory
+- Permitted values: "dockerv2"
+- Example: "type=dockerv2"
+
+**Version**
+
+- Key: **v**
+- Mandatory
+- Permitted values: "txtv0"
+- Example: "v=txtv0"
+
+**Backend URL**
+
+- Key: **to**
+- Mandatory
+- Permitted values: "absolute registry URL"
+- Note: "For non container traffic it will fallback to _website_, _www_ or _redirect_ config"
+- Example: "to=https://gcr.io/" _pass through namespaces, container and tag_
+- Example: "to=https://gcr.io/txtdirect/container" _pass through tag_
+- Example: "to=https://gcr.io/txtdirect/container:tag" _force specific tag_
+
+**Website Redirect URL**
+
+- Key: **website**
+- Recommended
+- Default: Fallback to **www** or **redirect** config
+- Note: "Non container traffic redirect"
+- Permitted values: "absolute|relative URL"
+- Example: "to=https://about.txtdirect.org/docs/"
 
 ---
+
 # Gometa Type
-**Type**  
 
-* Key: **type**
-* Mandatory
-* Permitted values: "gometa"
-* Example: "type=gometa"
+## Description
 
-**Version**  
+The `gometa` type enables vanity URLs for your Go packages. Using your own URL for packages, enables easier switching between your backend hosting service (GitHub, etc.) and lets you have custom import path for your package, independent of your hosting service. Using `gometa` you can switch your hosting service without worrying about impacting downstream for your users.
+Using `gometa` type you can point to a Go package inside your records using the `to=` field and we use that URI to generate a simple HTML page that only contains go-import and go-source **(Only for packages served on GitHub)** tags for `go get` to use it and find your package.
 
-* Key: **v**
-* Mandatory
-* Permitted values: "txtv0"
-* Example: "v=txtv0"
 
-**Backend URL**  
+## Record fields
 
-* Key: **to**
-* Recommended
-* Default: Fallbacks such as **www** or **redirect** config
-<!--* Note: "For non container traffic it will fallback to *website*, *www* or *redirect* config"-->
-* Permitted values: "absolute repository URL"
-* Example: "to=https://github.com/txtdirect/"
-* Example: "to=/docs/"
+**Type**
+
+- Key: **type**
+- Mandatory
+- Permitted values: "gometa"
+- Example: "type=gometa"
+
+**Version**
+
+- Key: **v**
+- Mandatory
+- Permitted values: "txtv0"
+- Example: "v=txtv0"
+
+**Backend URL**
+
+- Key: **to**
+- Recommended
+- Default: Fallbacks such as **www** or **redirect** config
+  <!--* Note: "For non container traffic it will fallback to *website*, *www* or *redirect* config"-->
+- Permitted values: "absolute repository URL"
+- Example: "to=https://github.com/txtdirect/"
+- Example: "to=/docs/"
 
 <!--
-**Website Redirect URL**  
+**Website Redirect URL**
 
 * Key: **website**
 * Recommended
@@ -198,60 +250,62 @@ https://tools.ietf.org/html/rfc3986#page-11
 * Example: "to=/docs/"
 -->
 
-**Repository Type**  
+**Repository Type**
 
-* Key: **vcs**
-* Recommended
-* Default: **git**
-* Permitted values: "git|bzr|fossil|hg|svn"
-* Example: "to=https://github.com/txtdirect/"
-
+- Key: **vcs**
+- Recommended
+- Default: **git**
+- Permitted values: "git|bzr|fossil|hg|svn"
+- Example: "to=https://github.com/txtdirect/"
 
 ---
+
 # Proxy Type (experimental)
-**Type**  
 
-* Key: **type**
-* Mandatory
-* Permitted values: "proxy"
-* Example: "type=proxy"
+**Type**
 
-**Version**  
+- Key: **type**
+- Mandatory
+- Permitted values: "proxy"
+- Example: "type=proxy"
 
-* Key: **v**
-* Mandatory
-* Permitted values: "txtv0"
-* Example: "v=txtv0"
+**Version**
 
-**Upstream URL**  
+- Key: **v**
+- Mandatory
+- Permitted values: "txtv0"
+- Example: "v=txtv0"
 
-* Key: **to**
-* Mandatory
-* Permitted values: "absolute URL"
-* Example: "to=https://example.com/subpage/"
-<!--root/website?-->
+**Upstream URL**
+
+- Key: **to**
+- Mandatory
+- Permitted values: "absolute URL"
+- Example: "to=https://example.com/subpage/"
 
 ---
+
 # Tor Type (experimental)
-**Type**  
 
-* Key: **type**
-* Mandatory
-* Permitted values: "tor"
-* Example: "type=tor"
+**Type**
 
-**Version**  
+- Key: **type**
+- Mandatory
+- Permitted values: "tor"
+- Example: "type=tor"
 
-* Key: **v**
-* Mandatory
-* Permitted values: "txtv0"
-* Example: "v=txtv0"
+**Version**
 
-**Upstream URL**  
+- Key: **v**
+- Mandatory
+- Permitted values: "txtv0"
+- Example: "v=txtv0"
 
-* Key: **to**
-* Mandatory
-* Permitted values: "absolute URL"
-* Example: "to=http://3g2upl4pq6kufc4m.onion/"
+**Upstream URL**
+
+- Key: **to**
+- Mandatory
+- Permitted values: "absolute URL"
+- Example: "to=http://3g2upl4pq6kufc4m.onion/"
 
 <!--root/website?-->
