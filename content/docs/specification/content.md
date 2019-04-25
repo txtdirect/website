@@ -201,7 +201,6 @@ The upstream endpoint used for `to=` can be different depending on the use case.
 - Note: "Non container traffic redirect"
 - Permitted values: "absolute|relative URL"
 - Example: "to=https://about.txtdirect.org/docs/"
-- Example: "to=/docs/"
 
 ---
 
@@ -209,7 +208,9 @@ The upstream endpoint used for `to=` can be different depending on the use case.
 
 ## Description
 
-One of the features that `go get` command has is that you can point a webpage to a Go package using go-import meta tag. For more information about these tags please visit [Remote import paths](https://golang.org/cmd/go/#hdr-Remote_import_paths). Using `gometa` type you can point to a go package inside your records using `to=` field and we use that URI to generate a simple HTML page that only contains go-import and go-source **(Only for packages served on GitHub)** tags for `go get` to use it and find your package.
+The `gometa` type enables vanity URLs for your Go packages. Using your own URL for packages, enables easier switching between your backend hosting service (GitHub, etc.) and lets you have custom import path for your package, independent of your hosting service. Using `gometa` you can switch your hosting service without worrying about impacting downstream for your users.
+Using `gometa` type you can point to a Go package inside your records using the `to=` field and we use that URI to generate a simple HTML page that only contains go-import and go-source **(Only for packages served on GitHub)** tags for `go get` to use it and find your package.
+
 
 ## Record fields
 
@@ -281,7 +282,6 @@ One of the features that `go get` command has is that you can point a webpage to
 - Mandatory
 - Permitted values: "absolute URL"
 - Example: "to=https://example.com/subpage/"
-  <!--root/website?-->
 
 ---
 
