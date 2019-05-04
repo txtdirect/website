@@ -5,6 +5,7 @@ fragment = "content"
 weight = "100"
 
 title = "Disclaimer"
+title_align = "left"
 subtitle = ""
 
 [sidebar]
