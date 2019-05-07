@@ -6,7 +6,7 @@ project:
   oneLiner: "TXTDirect website"
   description: |
     TXTDirect website repository for the static website hosted at https://about.txtdirect.org.  
-    Built with [Hugo](https://gohugo.io) and [Syna](https://github.com/okkur/syna).
+    Built with [Hugo](https://gohugo.io) and [Syna](https://syna.okkur.org).
   version: "v0.1.0"
   mainLicense: "CCByNcSa"
 
@@ -17,21 +17,20 @@ vision:
 
 contributionLinks:
   issueTemplate: "/.github/ISSUE_TEMPLATE.md"
-  starterIssues: "https://github.com/txtdirect/website/labels/starter%20issue" # replace dear-github with your actual url
+  starterIssues: "https://github.com/txtdirect/website/labels/starter%20issue"
 
 emails:
-  security: "security@okkur.io"
-  coc: "coc@okkur.io"
+  security: "security@okkur.org"
+  coc: "coc@okkur.org"
 
 copyright:
   year: "2017"
 
 cla:
-  copyrightHolder: "Michael Grosser"
+  copyrightHolder: "nzt.ventures GmbH"
+  mail: "legal@nzt.ventures"
 
 maintainers:
-  - name: "Antoine Martin"
-    nick: "alarsyo"
   - name: "Michael Grosser"
     nick: "stp-ip"
 
@@ -42,9 +41,9 @@ repo:
 badges:
   - image: "https://img.shields.io/badge/state-stable-green.svg"
     alt: "state"
-  - image: "https://img.shields.io/github/release/txtdirect/website.svg"
-    link: "https://github.com/txtdirect/website/releases"
-    alt: "release"
   - image: "https://img.shields.io/github/license/txtdirect/website.svg"
     link: "LICENSE"
     alt: "license"
+
+reposeed:
+  configVersion: "v1"

@@ -2,13 +2,13 @@
 
 TXTDirect website
 
- [![state](https://img.shields.io/badge/state-stable-green.svg)]() [![release](https://img.shields.io/github/release/txtdirect/website.svg)](https://github.com/txtdirect/website/releases) [![license](https://img.shields.io/github/license/txtdirect/website.svg)](LICENSE)
+ [![state](https://img.shields.io/badge/state-stable-green.svg)]() [![license](https://img.shields.io/github/license/txtdirect/website.svg)](LICENSE)
 
 
 
 # TXTDirect Website
 TXTDirect website repository for the static website hosted at https://about.txtdirect.org.  
-Built with [Hugo](https://gohugo.io) and [Syna](https://github.com/okkur/syna).
+Built with [Hugo](https://gohugo.io) and [Syna](https://syna.okkur.org).
 
 ## Using TXTDirect Website
 
