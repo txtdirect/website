@@ -3,6 +3,6 @@ fragment = "pricing"
 weight = 100
 background = "light"
 
-title = "Get more out of TXTDirect"
-subtitle = "Reliable and distributed hosting provided by <a href=\"https://about.rekkur.com/\" target=\"_blank\">Rekkur Solutions GmbH</a>"
+title = "Your hosted TXTDirect service"
+subtitle = "TXTd<a href='https://rekkur.com'><img class='mt-n2' src='/images/a_rekkur_service_white.svg' height='32' alt='© Copyright Rekkur Solutions' title='© Copyright Rekkur Solutions'></a>"
 +++
