@@ -14,5 +14,5 @@ align = "center"
 <br>
 <br>
 
-<h4><a href="https://www.site24x7.eu/signals/pv/Y-zp59h_eXhU0GqIZeGNA6cptQSe_38uXhcM7ryv610="><button class="btn btn-outline-light">status.txtd.io</button></a></h4>
+<h4><a href="https://status.txtd.io"><button class="btn btn-outline-light">status.txtd.io</button></a></h4>
 </div>
