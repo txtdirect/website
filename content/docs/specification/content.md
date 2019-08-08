@@ -150,7 +150,7 @@ If a custom regex is configured with the `re=` field each match is used as a sub
 - Key: **re**
 - Permitted values: "regex/ordered regex"
 - Note: "Named regexes can be used to reorder the results. a > b > b1 > b2"
-- Example: "`from=\\?query=(?P<a>[^&]+)\\&more=(?P<b>[^&]+)`"
+- Example: "`re=\\?query=(?P<a>[^&]+)\\&more=(?P<b>[^&]+)`"
 
 ---
 

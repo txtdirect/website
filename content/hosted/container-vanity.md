@@ -19,7 +19,7 @@ post = "*gcr.io/txtdirect-223710/txtdirect:dev-3fd9be*"
 * Use the open TXTDirect spec to configure your vanity url
 
 ```text
-c.txtdirect.org                    86000 IN CNAME   txtd.io.
+c.txtdirect.org                    86000 IN CNAME   docker.txtd.io.
 _redirect.c.txtdirect.org          86400 IN TXT     "v=txtv0;to=https://gcr.io/txtdirect-223710/txtdirect;type=dockerv2"
 ```
 

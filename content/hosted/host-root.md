@@ -14,14 +14,14 @@ post = "*about.txtdirect.org*"
   icon = "fas fa-arrow-down"
 +++
 
-* Point your chosen root A-record to **35.201.95.240**
-* Point your chosen root AAAA-record to **2600:1901:0:cdc7:0:0:0:0**
+* Point your chosen root A-record to **45.85.238.5**
+* Point your chosen root AAAA-record to **2a0e:c885:5::1**
 * Create a TXT record with the subdomain **_redirect**
 * Use the open TXTDirect spec to configure your redirect
 
 ```text
-txtdirect.org             86000 IN A       35.201.95.240
-txtdirect.org             86000 IN AAAA    2600:1901:0:cdc7:0:0:0:0
+txtdirect.org             86000 IN A       45.85.238.5
+txtdirect.org             86000 IN AAAA    2a0e:c885:5::1
 _redirect.txtdirect.org   86000 IN TXT     "v=txtv0;to=https://about.txtdirect.org;type=host"
 ```
 

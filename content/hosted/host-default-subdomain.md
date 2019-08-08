@@ -14,5 +14,5 @@ post = "*www.txtdirect.org*"
   icon = "fas fa-arrow-down"
 +++
 
-* Point your chosen root A-record to **35.201.95.240**
-* Point your chosen root AAAA-record to **2600:1901:0:cdc7:0:0:0:0**
+* Point your chosen root A-record to **45.85.238.5**
+* Point your chosen root AAAA-record to **2a0e:c885:5::1**
