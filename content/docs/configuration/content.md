@@ -13,9 +13,9 @@ title = "Configuration"
 
 ---
 
-### Supported redirect types:
+## Supported redirect types:
 
-| Type Name | Type Information                                            |
+| Type Name | Type Description                                            |
 | --------- | ----------------------------------------------------------- |
 | www       | Redirect all requests to "www"-subdomain                    |
 | host      | Redirect to host provided in TXT record                     |
@@ -27,7 +27,7 @@ title = "Configuration"
 
 ---
 
-### Enable types
+## Enable type
 
 ```
 txtdirect {
@@ -35,7 +35,7 @@ txtdirect {
 }
 ```
 
-### Enable multiple types
+## Enable multiple types
 
 ```
 txtdirect {
@@ -43,7 +43,7 @@ txtdirect {
 }
 ```
 
-### Disable types
+## Disable type
 
 ```
 txtdirect {
@@ -52,6 +52,8 @@ txtdirect {
 ```
 
 # Fallback
+
+---
 
 ## Flow
 
@@ -87,3 +89,89 @@ txtdirect {
   redirect https://example.com
 }
 ```
+
+# Prometheus Metrics
+
+---
+
+## Metrics name
+
+| Metric Name                           | Metric Description                         |
+| ------------------------------------- | ------------------------------------------ |
+| txtdirect_redirect_count_total        | Total requests per host                    |
+| txtdirect_redirect_status_count_total | Total returned statuses per host           |
+| txtdirect_redirect_type_count_total   | Total requests for each host based on type |
+| txtdirect_fallback_type_count_total   | Total fallbacks triggered for each type    |
+| txtdirect_redirect_path_count_total   | Total redirects per path for each host     |
+
+## Prometheus config
+
+You can either use the default settings for enabling Promethues metrics or the advanced config to provide a custom address and path for exporting metrics.
+
+### Enable Prometheus metrics
+
+```
+txtdirect {
+  prometheus
+}
+```
+
+### Advanced config
+
+```
+txtdirect {
+  prometheus {
+    address 192.168.0.1:6543
+    path /mymetrics
+  }
+}
+```
+
+# Gomods
+
+---
+
+## Enable Gomods
+
+```
+txtdirect {
+  enable gomods
+}
+```
+
+## Advanced config
+
+```
+txtdirect {
+  gomods {
+    gobinary /usr/bin/go
+    workers 2
+  }
+}
+```
+
+## Gomods Cache
+
+---
+
+### Supported cache types
+
+| Type Name | Type Description                             |
+| --------- | -------------------------------------------- |
+| local     | Caches the packages in the local file system |
+| tmp       | Caches the packages in /tmp directory        |
+
+### Config
+
+```
+txtdirect {
+  gomods {
+    cache {
+      type local
+      path /home/user/gomods_cache
+    }
+  }
+}
+```
+
+---
