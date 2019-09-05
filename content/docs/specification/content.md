@@ -211,7 +211,6 @@ The upstream endpoint used for `to=` can be different depending on the use case.
 The `gometa` type enables vanity URLs for your Go packages. Using your own URL for packages, enables easier switching between your backend hosting service (GitHub, etc.) and lets you have custom import path for your package, independent of your hosting service. Using `gometa` you can switch your hosting service without worrying about impacting downstream for your users.
 Using `gometa` type you can point to a Go package inside your records using the `to=` field and we use that URI to generate a simple HTML page that only contains go-import and go-source **(Only for packages served on GitHub)** tags for `go get` to use it and find your package.
 
-
 ## Record fields
 
 **Type**
@@ -260,7 +259,37 @@ Using `gometa` type you can point to a Go package inside your records using the 
 
 ---
 
+# Gomods Type
+
+## Description
+
+The `gomods` type provides vanity urls for Go modules. It uses the request's path to identify a Go package's import path. Then it fetches the package and module files like `info`, `mod` and `zip` to serve a `go get` request. `gomods` supports all the hosting services and VCS` that are supported by Go tools.
+
+It also provides local caching for Go modules. You can also define a custom Go binary for fetching the modules and a custom number of workers for the module downloader's stash.
+
+The `gomods` type doesn't require any specific config in the DNS records and gets configured in the [TXTDirect config](/docs/configuration#gomods-config).
+
+**Type**
+
+- Key: **type**
+- Mandatory
+- Permitted values: "gomods"
+- Example: "type=gomods"
+
+**Version**
+
+- Key: **v**
+- Mandatory
+- Permitted values: "txtv0"
+- Example: "v=txtv0"
+
+---
+
 # Proxy Type (experimental)
+
+## Description
+
+The `proxy` type let's you proxy your requests to a specific upstream. It reads the upstream from the record's `to=` field and reverse proxies the request.
 
 **Type**
 
@@ -282,30 +311,3 @@ Using `gometa` type you can point to a Go package inside your records using the 
 - Mandatory
 - Permitted values: "absolute URL"
 - Example: "to=https://example.com/subpage/"
-
----
-
-# Tor Type (experimental)
-
-**Type**
-
-- Key: **type**
-- Mandatory
-- Permitted values: "tor"
-- Example: "type=tor"
-
-**Version**
-
-- Key: **v**
-- Mandatory
-- Permitted values: "txtv0"
-- Example: "v=txtv0"
-
-**Upstream URL**
-
-- Key: **to**
-- Mandatory
-- Permitted values: "absolute URL"
-- Example: "to=http://3g2upl4pq6kufc4m.onion/"
-
-<!--root/website?-->
