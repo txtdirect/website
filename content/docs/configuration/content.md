@@ -13,21 +13,21 @@ title = "Configuration"
 
 ---
 
-## Supported redirect types:
+## Supported redirect types
 
 | Type Name | Type Description                                            |
 | --------- | ----------------------------------------------------------- |
 | www       | Redirect all requests to "www"-subdomain                    |
 | host      | Redirect to host provided in TXT record                     |
 | path      | Enable path based redirects                                 |
-| gometa    | Enable Go packages meta/vanity redirects                    |
+| gometa    | Enable Go package meta/vanity redirects                     |
 | gomods    | Enable serving and caching Go modules                       |
 | dockerv2  | Redirect to docker registry or image provided in TXT record |
 | proxy     | Proxy the request to endpoint provided in TXT record        |
 
 ---
 
-## Enable type
+## Enable single type
 
 ```
 txtdirect {
@@ -43,7 +43,7 @@ txtdirect {
 }
 ```
 
-## Disable type
+## Disable specific type
 
 ```
 txtdirect {
@@ -59,18 +59,15 @@ txtdirect {
 
 Step-by-Step fallback flow:
 
-- Specific record's `to=` field
-- Specific record's `website=` field
-- Specific record's `root=` field
-- Second to last record's `website=` field
-- Second to last record's `root=` field
-- Second to last record's `to=` field
-- Request's host "www"-subdomain
-- Global config's `redirect` field
+- Current TXT record's `to=` field
+- Current TXT record's `website=` field
+- Current TXT record's `root=` field
+- Parent (type=path) TXT record's `website=` field
+- Parent (type=path) TXT record's `root=` field
+- Parent (type=path) TXT record's `to=` field
+- Request's host "www"-subdomain (if enabled)
+- Global config's `redirect` field (if configured)
 - 404 Status code
-
-_hint: **Specific record** is the last TXT record found_  
-_hint 2: **Second to last record** is the last path record leading to the **Specific record**_
 
 ## Global fallback config
 
@@ -106,7 +103,7 @@ txtdirect {
 
 ## Prometheus config
 
-You can either use the default settings for enabling Promethues metrics or the advanced config to provide a custom address and path for exporting metrics.
+You can either use the default settings for enabling Prometheus metrics or the advanced config to provide a custom address and path for exporting metrics.
 
 ### Enable Prometheus metrics
 
@@ -208,7 +205,7 @@ txtdirect {
 
 ---
 
-To use a custom DNS resolver instead of machine's default resolver, you can provide the `resolver` address in the config.
+To use a custom DNS resolver instead of the machine's default resolver, you can provide the `resolver` address in the config.
 
 ## Config
 

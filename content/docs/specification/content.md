@@ -143,7 +143,7 @@ If a custom regex is configured with the `re=` field each match is used as a sub
 
 - Key: **from**
 - Permitted values: "simplified regex"
-- Example: "from=/$2/$1/\$3"
+- Example: "from=/$2/$1/$3"
 
 **Regex**
 
@@ -289,7 +289,7 @@ The `gomods` type doesn't require any specific config in the DNS records and get
 
 ## Description
 
-The `proxy` type let's you to proxy your requests to a specific endpoint. It reads the endpoint from record's `to=` field and reverse proxies the requst to the endpoint.
+The `proxy` type let's you proxy your requests to a specific upstream. It reads the upstream from the record's `to=` field and reverse proxies the request.
 
 **Type**
 
