@@ -107,7 +107,9 @@ If a custom regex is configured with the `re=` field each match is used as a sub
 
 ## Wildcards
 
-Beside using wildcards to handle [non-existent zones](#wildcard-records), they can also get used to generate zones using a request's path. Using the `path` record you can use the incoming request's path to match a wildcard record and use its TXT record.
+If a specific record is non existent it will fallback to a wildcard record, if available.
+Wildcard records can be set using `_` such as `_redirect._.path.example.com`.  
+_For non existent zones or catch-all use-cases a [general wildcard](#wildcard-records) can be used._
 
 For example look at these sample records:
 
@@ -330,22 +332,23 @@ A wildcard DNS record is a record in a DNS zone that will match requests for non
 Take a look at these sample records:
 
 ```
+; NOTE: Using a CNAME record for the wildcard is not supported and will lead to wrong behaviour
+*.example.test.                    IN A   127.0.0.1
+_redirect._.example.test.          IN TXT "v=txtv0;to=http://wildcard.test;type=host;code=302"
 
-example.test.                    IN A   127.0.0.1
-_redirect.example.test.          IN TXT "v=txtv0;to=http://example.com;type=host;code=302"
-_redirect.specific.example.test. IN TXT "v=txtv0;to=http://specific.test;type=host;code=302"
-_redirect._.example.test.        IN TXT "v=txtv0;to=http://wildcard.test;type=host;code=302"
-
+; NOTE: Specific records can use a CNAME or A/AAAA records.
+specific.example.test              IN A   127.0.0.1
+_redirect.specific.example.test.   IN TXT "v=txtv0;to=http://specific.test;type=host;code=302"
 ```
 
-All the requests for a subdomain of `example.test` like `test.example.test` would get redirected to `http://wildcard.test` by the last record because they don't have a specific record. Expect for the `specific.example.test` subdomain which has a specific record for itself.
+All the requests for a given subdomain of `example.test` such as `test.example.test` would use the wildcard record of the parent zone `_redirect._.example.test`.
+In the case a more specific record is available it will take be used.  
+For a specific record to work a specific subdomain needs to be setup as well. This is based on DNS specifics.
+With `specific.example.test` and `_redirect.specific.example.test` set it will be used instead of the above wildcard.
 
 The redirect flow for these records would look like this:
 
 ```
-
-example.test          -> http://example.com
 specific.example.test -> http://specific.test
 *.example.test        -> http://wildcard.test
-
 ```
