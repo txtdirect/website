@@ -105,6 +105,43 @@ The request's path is used to construct the zone address, which provides the red
 A custom ordering can be achieved by using the `from=` field. It will reorder the sub zones accordingly.
 If a custom regex is configured with the `re=` field each match is used as a sub zone. Ordering can be modified by using named matches. The default ordering will use the first match as the first sub zone and continue until there are no new matches.
 
+## Wildcards
+
+If a specific record is non existent it will fallback to a wildcard record, if available.
+Wildcard records can be set using `_` such as `_redirect._.path.example.com`.  
+_For non existent zones or catch-all use-cases a [general wildcard](#wildcard-records) can be used._
+
+For example look at these sample records:
+
+```
+_redirect.path.example.test.      IN TXT "v=txtv0;to=https://about.txtdirect.org/docs/specification/#path-type;type=path;code=302"
+_redirect._.path.example.test.      IN TXT "v=txtv0;to=https://about.txtdirect.org/docs/specification/#wildcards;type=host;code=302"
+```
+
+If the incoming request's path isn't empty it will get redirected to wildcard record's `to=` field. But if the request doesn't have a path, it gets redirected to the first record's `to=` field.
+
+```
+https://path.example.test -> https://about.txtdirect.org/docs/specification/#path-type
+https://path.example.test/wildcards -> https://about.txtdirect.org/docs/specification/#wildcards
+```
+
+### Multi-level wildcards
+
+Wildcard records can have more than just one placeholder and be multi-level. By default the incoming request's path would get reversed and then used to generate a zone address. For example if the request's path is `/first/second` the resulting zone address would be `second.first.host.tld`.
+The order can be custimzed using a simplified regex aka the `from=` field. For example look at these sample records:
+
+```
+_redirect.path.example.test.      IN TXT "v=txtv0;from=/$2/$1;to=https://parent.example.test;type=path;code=302"
+
+_redirect._.first.path.example.test.      IN TXT "v=txtv0;to=https://first.example.test;type=host;code=302"
+_redirect._.second.path.example.test.      IN TXT "v=txtv0;to=https://second.example.test;type=host;code=302"
+_redirect._._.path.example.test.      IN TXT "v=txtv0;to=https://nothing.example.test;type=host;code=302"
+```
+
+Now if the incoming requst's path is `/first/second` it would use the `_redirect._.second.path.example.test` record and get redirected to `https://second.example.test`. That's because we used the `/$2/$1` regex for the parent path record's `from=` field. Also if the request's path is `/second/first` it would use the `_redirect._.first.path.example.test` record.
+
+If the request's path is neither of those cases, it would then use the last wildcard record. So if the requet's path for example is `/not/available`, it would use the `_redirect._._.path.example.test` record and get redirected to `https://nothing.example.test`.
+
 ## Record Fields
 
 **Type**
@@ -211,7 +248,6 @@ The upstream endpoint used for `to=` can be different depending on the use case.
 The `gometa` type enables vanity URLs for your Go packages. Using your own URL for packages, enables easier switching between your backend hosting service (GitHub, etc.) and lets you have custom import path for your package, independent of your hosting service. Using `gometa` you can switch your hosting service without worrying about impacting downstream for your users.
 Using `gometa` type you can point to a Go package inside your records using the `to=` field and we use that URI to generate a simple HTML page that only contains go-import and go-source **(Only for packages served on GitHub)** tags for `go get` to use it and find your package.
 
-
 ## Record fields
 
 **Type**
@@ -262,6 +298,10 @@ Using `gometa` type you can point to a Go package inside your records using the 
 
 # Proxy Type (experimental)
 
+## Description
+
+The `proxy` type let's you proxy your requests to a specific upstream. It reads the upstream from the record's `to=` field and reverse proxies the request.
+
 **Type**
 
 - Key: **type**
@@ -285,27 +325,30 @@ Using `gometa` type you can point to a Go package inside your records using the 
 
 ---
 
-# Tor Type (experimental)
+# Wildcard Records
 
-**Type**
+A wildcard DNS record is a record in a DNS zone that will match requests for non-existent domain names. For example you can specifiy a record that matches all the subdomains that don't have a specific TXT record.
 
-- Key: **type**
-- Mandatory
-- Permitted values: "tor"
-- Example: "type=tor"
+Take a look at these sample records:
 
-**Version**
+```
+; NOTE: Using a CNAME record for the wildcard is not supported and will lead to wrong behaviour
+*.example.test.                    IN A   127.0.0.1
+_redirect._.example.test.          IN TXT "v=txtv0;to=http://wildcard.test;type=host;code=302"
 
-- Key: **v**
-- Mandatory
-- Permitted values: "txtv0"
-- Example: "v=txtv0"
+; NOTE: Specific records can use a CNAME or A/AAAA records.
+specific.example.test              IN A   127.0.0.1
+_redirect.specific.example.test.   IN TXT "v=txtv0;to=http://specific.test;type=host;code=302"
+```
 
-**Upstream URL**
+All the requests for a given subdomain of `example.test` such as `test.example.test` would use the wildcard record of the parent zone `_redirect._.example.test`.
+In the case a more specific record is available it will take be used.  
+For a specific record to work a specific subdomain needs to be setup as well. This is based on DNS specifics.
+With `specific.example.test` and `_redirect.specific.example.test` set it will be used instead of the above wildcard.
 
-- Key: **to**
-- Mandatory
-- Permitted values: "absolute URL"
-- Example: "to=http://3g2upl4pq6kufc4m.onion/"
+The redirect flow for these records would look like this:
 
-<!--root/website?-->
+```
+specific.example.test -> http://specific.test
+*.example.test        -> http://wildcard.test
+```
