@@ -107,7 +107,7 @@ If a custom regex is configured with the `re=` field each match is used as a sub
 
 ## Wildcards
 
-A wildcard DNS record is a record in a DNS zone that will match requests for non-existent domain names. Using the `path` record you can use the incoming request's path to match a wildcard record and use its TXT record.
+Beside using wildcards to handle [non-existent zones](#wildcard-records), they can also get used to generate zones using a request's path. Using the `path` record you can use the incoming request's path to match a wildcard record and use its TXT record.
 
 For example look at these sample records:
 
@@ -178,7 +178,7 @@ If the request's path is neither of those cases, it would then use the last wild
 
 - Key: **from**
 - Permitted values: "simplified regex"
-- Example: "from=/$2/$1/\$3"
+- Example: "from=/$2/$1/$3"
 
 **Regex**
 
@@ -320,3 +320,32 @@ The `proxy` type let's you proxy your requests to a specific upstream. It reads 
 - Mandatory
 - Permitted values: "absolute URL"
 - Example: "to=https://example.com/subpage/"
+
+---
+
+# Wildcard Records
+
+A wildcard DNS record is a record in a DNS zone that will match requests for non-existent domain names. For example you can specifiy a record that matches all the subdomains that don't have a specific TXT record.
+
+Take a look at these sample records:
+
+```
+
+example.test.                    IN A   127.0.0.1
+_redirect.example.test.          IN TXT "v=txtv0;to=http://example.com;type=host;code=302"
+_redirect.specific.example.test. IN TXT "v=txtv0;to=http://specific.test;type=host;code=302"
+_redirect._.example.test.        IN TXT "v=txtv0;to=http://wildcard.test;type=host;code=302"
+
+```
+
+All the requests for a subdomain of `example.test` like `test.example.test` would get redirected to `http://wildcard.test` by the last record because they don't have a specific record. Expect for the `specific.example.test` subdomain which has a specific record for itself.
+
+The redirect flow for these records would look like this:
+
+```
+
+example.test          -> http://example.com
+specific.example.test -> http://specific.test
+*.example.test        -> http://wildcard.test
+
+```
