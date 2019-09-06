@@ -105,6 +105,41 @@ The request's path is used to construct the zone address, which provides the red
 A custom ordering can be achieved by using the `from=` field. It will reorder the sub zones accordingly.
 If a custom regex is configured with the `re=` field each match is used as a sub zone. Ordering can be modified by using named matches. The default ordering will use the first match as the first sub zone and continue until there are no new matches.
 
+## Wildcards
+
+A wildcard DNS record is a record in a DNS zone that will match requests for non-existent domain names. Using the `path` record you can use the incoming request's path to match a wildcard record and use its TXT record.
+
+For example look at these sample records:
+
+```
+_redirect.path.example.test.      IN TXT "v=txtv0;to=https://about.txtdirect.org/docs/specification/#path-type;type=path;code=302"
+_redirect._.path.example.test.      IN TXT "v=txtv0;to=https://about.txtdirect.org/docs/specification/#wildcards;type=host;code=302"
+```
+
+If the incoming request's path isn't empty it will get redirected to wildcard record's `to=` field. But if the request doesn't have a path, it gets redirected to the first record's `to=` field.
+
+```
+https://path.example.test -> https://about.txtdirect.org/docs/specification/#path-type
+https://path.example.test/wildcards -> https://about.txtdirect.org/docs/specification/#wildcards
+```
+
+### Multi-level wildcards
+
+Wildcard records can have more than just one placeholder and be multi-level. By default the incoming request's path would get reversed and then used to generate a zone address. For example if the request's path is `/first/second` the resulting zone address would be `second.first.host.tld`.
+The order can be custimzed using a simplified regex aka the `from=` field. For example look at these sample records:
+
+```
+_redirect.path.example.test.      IN TXT "v=txtv0;from=/$2/$1;to=https://parent.example.test;type=path;code=302"
+
+_redirect._.first.path.example.test.      IN TXT "v=txtv0;to=https://first.example.test;type=host;code=302"
+_redirect._.second.path.example.test.      IN TXT "v=txtv0;to=https://second.example.test;type=host;code=302"
+_redirect._._.path.example.test.      IN TXT "v=txtv0;to=https://nothing.example.test;type=host;code=302"
+```
+
+Now if the incoming requst's path is `/first/second` it would use the `_redirect._.second.path.example.test` record and get redirected to `https://second.example.test`. That's because we used the `/$2/$1` regex for the parent path record's `from=` field. Also if the request's path is `/second/first` it would use the `_redirect._.first.path.example.test` record.
+
+If the request's path is neither of those cases, it would then use the last wildcard record. So if the requet's path for example is `/not/available`, it would use the `_redirect._._.path.example.test` record and get redirected to `https://nothing.example.test`.
+
 ## Record Fields
 
 **Type**
@@ -143,7 +178,7 @@ If a custom regex is configured with the `re=` field each match is used as a sub
 
 - Key: **from**
 - Permitted values: "simplified regex"
-- Example: "from=/$2/$1/$3"
+- Example: "from=/$2/$1/\$3"
 
 **Regex**
 
@@ -256,32 +291,6 @@ Using `gometa` type you can point to a Go package inside your records using the 
 - Default: **git**
 - Permitted values: "git|bzr|fossil|hg|svn"
 - Example: "to=https://github.com/txtdirect/"
-
----
-
-# Gomods Type
-
-## Description
-
-The `gomods` type provides vanity urls for Go modules. It uses the request's path to identify a Go package's import path. Then it fetches the package and module files like `info`, `mod` and `zip` to serve a `go get` request. `gomods` supports all the hosting services and VCS` that are supported by Go tools.
-
-It also provides local caching for Go modules. You can also define a custom Go binary for fetching the modules and a custom number of workers for the module downloader's stash.
-
-The `gomods` type doesn't require any specific config in the DNS records and gets configured in the [TXTDirect config](/docs/configuration#gomods-config).
-
-**Type**
-
-- Key: **type**
-- Mandatory
-- Permitted values: "gomods"
-- Example: "type=gomods"
-
-**Version**
-
-- Key: **v**
-- Mandatory
-- Permitted values: "txtv0"
-- Example: "v=txtv0"
 
 ---
 
