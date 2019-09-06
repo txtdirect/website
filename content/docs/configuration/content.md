@@ -21,7 +21,6 @@ title = "Configuration"
 | host      | Redirect to host provided in TXT record                     |
 | path      | Enable path based redirects                                 |
 | gometa    | Enable Go package meta/vanity redirects                     |
-| gomods    | Enable serving and caching Go modules                       |
 | dockerv2  | Redirect to docker registry or image provided in TXT record |
 | proxy     | Proxy the request to endpoint provided in TXT record        |
 
@@ -39,7 +38,7 @@ txtdirect {
 
 ```
 txtdirect {
-  enable host path gomods dockerv2
+  enable host path gometa dockerv2
 }
 ```
 
@@ -120,53 +119,6 @@ txtdirect {
   prometheus {
     address 192.168.0.1:6543
     path /mymetrics
-  }
-}
-```
-
-# Gomods
-
----
-
-## Enable Gomods
-
-```
-txtdirect {
-  enable gomods
-}
-```
-
-## Advanced config
-
-```
-txtdirect {
-  gomods {
-    gobinary /usr/bin/go
-    workers 2
-  }
-}
-```
-
-## Gomods Cache
-
----
-
-### Supported cache types
-
-| Type Name | Type Description                             |
-| --------- | -------------------------------------------- |
-| local     | Caches the packages in the local file system |
-| tmp       | Caches the packages in /tmp directory        |
-
-### Config
-
-```
-txtdirect {
-  gomods {
-    cache {
-      type local
-      path /home/user/gomods_cache
-    }
   }
 }
 ```
