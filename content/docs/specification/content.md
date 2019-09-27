@@ -329,6 +329,8 @@ The `proxy` type let's you proxy your requests to a specific upstream. It reads 
 
 A wildcard DNS record is a record in a DNS zone that will match requests for non-existent domain names. For example you can specifiy a record that matches all the subdomains that don't have a specific TXT record.
 
+*NOTE: Using a CNAME record for the wildcard is not supported and will lead to wrong behaviour*
+
 Take a look at these sample records:
 
 ```
