@@ -114,8 +114,8 @@ _For non existent zones or catch-all use-cases a [general wildcard](#wildcard-re
 For example look at these sample records:
 
 ```
-_redirect.path.example.test.      IN TXT "v=txtv0;to=https://about.txtdirect.org/docs/specification/#path-type;type=path;code=302"
-_redirect._.path.example.test.      IN TXT "v=txtv0;to=https://about.txtdirect.org/docs/specification/#wildcards;type=host;code=302"
+_redirect.path.example.test.      IN TXT "v=txtv0;type=path;code=302;to=https://about.txtdirect.org/docs/specification/#path-type"
+_redirect._.path.example.test.      IN TXT "v=txtv0;type=host;code=302;to=https://about.txtdirect.org/docs/specification/#wildcards"
 ```
 
 If the incoming request's path isn't empty it will get redirected to wildcard record's `to=` field. But if the request doesn't have a path, it gets redirected to the first record's `to=` field.
@@ -131,11 +131,11 @@ Wildcard records can have more than just one placeholder and be multi-level. By 
 The order can be custimzed using a simplified regex aka the `from=` field. For example look at these sample records:
 
 ```
-_redirect.path.example.test.      IN TXT "v=txtv0;from=/$2/$1;to=https://parent.example.test;type=path;code=302"
+_redirect.path.example.test.      IN TXT "v=txtv0;type=path;code=302;from=/$2/$1;to=https://parent.example.test"
 
-_redirect._.first.path.example.test.      IN TXT "v=txtv0;to=https://first.example.test;type=host;code=302"
-_redirect._.second.path.example.test.      IN TXT "v=txtv0;to=https://second.example.test;type=host;code=302"
-_redirect._._.path.example.test.      IN TXT "v=txtv0;to=https://nothing.example.test;type=host;code=302"
+_redirect._.first.path.example.test.      IN TXT "v=txtv0;type=host;code=302;to=https://first.example.test"
+_redirect._.second.path.example.test.      IN TXT "v=txtv0;type=host;code=302;to=https://second.example.test"
+_redirect._._.path.example.test.      IN TXT "v=txtv0;type=host;code=302;to=https://nothing.example.test"
 ```
 
 Now if the incoming requst's path is `/first/second` it would use the `_redirect._.second.path.example.test` record and get redirected to `https://second.example.test`. That's because we used the `/$2/$1` regex for the parent path record's `from=` field. Also if the request's path is `/second/first` it would use the `_redirect._.first.path.example.test` record.
@@ -336,11 +336,11 @@ Take a look at these sample records:
 ```
 ; NOTE: Using a CNAME record for the wildcard is not supported and will lead to wrong behaviour
 *.example.test.                    IN A   127.0.0.1
-_redirect._.example.test.          IN TXT "v=txtv0;to=http://wildcard.test;type=host;code=302"
+_redirect._.example.test.          IN TXT "v=txtv0;type=host;code=302;to=http://wildcard.test"
 
 ; NOTE: Specific records can use a CNAME or A/AAAA records.
 specific.example.test              IN A   127.0.0.1
-_redirect.specific.example.test.   IN TXT "v=txtv0;to=http://specific.test;type=host;code=302"
+_redirect.specific.example.test.   IN TXT "v=txtv0;type=host;code=302;to=http://specific.test"
 ```
 
 All the requests for a given subdomain of `example.test` such as `test.example.test` would use the wildcard record of the parent zone `_redirect._.example.test`.

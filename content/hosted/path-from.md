@@ -20,11 +20,11 @@ post = "*docs.txtdirect.org/v2*"
 
 ```text
 s.txtdirect.org                 86000 IN CNAME   txtd.io.
-_redirect.s.txtdirect.org       86400 IN TXT     "v=txtv0;from=/$2/$1/;to=https://about.txtdirect.org;root=https://about.txtdirect.org;type=path"
+_redirect.s.txtdirect.org       86400 IN TXT     "v=txtv0;type=path;from=/$2/$1/;to=https://about.txtdirect.org;root=https://about.txtdirect.org"
 
-_redirect.v2.docs.s.txtdirect.org   86400 IN TXT     "v=txtv0;to=https://docs.txtdirect.org/v2;type=host;code=302"
+_redirect.v2.docs.s.txtdirect.org   86400 IN TXT     "v=txtv0;type=host;code=302;to=https://docs.txtdirect.org/v2"
 
-_redirect._._.s.txtdirect.org   86400 IN TXT     "v=txtv0;to=https://about.txtdirect.org/hosted;type=host;code=302"
+_redirect._._.s.txtdirect.org   86400 IN TXT     "v=txtv0;type=host;code=302;to=https://about.txtdirect.org/hosted"
 ```
 
 Instead of the default lookup order TXTDirect allows a custom order to be set using the **from**. Using **/$2/$1** would reverse the default order.

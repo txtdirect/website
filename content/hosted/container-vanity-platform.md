@@ -20,7 +20,7 @@ post = "*gcr.io/txtdirect-223710/txtdirect:dev-3fd9be*"
 
 ```text
 c.txtdirect.org                    86000 IN CNAME   docker.txtd.io.
-_redirect.c.txtdirect.org          86400 IN TXT     "v=txtv0;to=https://gcr.io;type=dockerv2"
+_redirect.c.txtdirect.org          86400 IN TXT     "v=txtv0;type=dockerv2;to=https://gcr.io"
 ```
 
 ### Options

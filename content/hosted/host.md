@@ -20,7 +20,7 @@ post = "*about.txtdirect.org*"
 
 ```text
 www.txtdirect.org             86000 IN CNAME   txtd.io.
-_redirect.www.txtdirect.org   86000 IN TXT     "v=txtv0;to=https://about.txtdirect.org;type=host"
+_redirect.www.txtdirect.org   86000 IN TXT     "v=txtv0;type=host;to=https://about.txtdirect.org"
 ```
 
 ### Options

@@ -22,7 +22,7 @@ post = "*about.txtdirect.org*"
 ```text
 txtdirect.org             86000 IN A       45.85.238.5
 txtdirect.org             86000 IN AAAA    2a0e:c885:5::1
-_redirect.txtdirect.org   86000 IN TXT     "v=txtv0;to=https://about.txtdirect.org;type=host"
+_redirect.txtdirect.org   86000 IN TXT     "v=txtv0;type=host;to=https://about.txtdirect.org"
 ```
 
 ### Options

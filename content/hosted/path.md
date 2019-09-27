@@ -20,9 +20,9 @@ post = "*about.txtdirect.org/hosted*"
 
 ```text
 s.txtdirect.org                    86000 IN CNAME   txtd.io.
-_redirect.s.txtdirect.org          86400 IN TXT     "v=txtv0;to=https://about.txtdirect.org;root=https://about.txtdirect.org;type=path"
+_redirect.s.txtdirect.org          86400 IN TXT     "v=txtv0;type=path;root=https://about.txtdirect.org;to=https://about.txtdirect.org"
 
-_redirect.hosted.s.txtdirect.org   86400 IN TXT     "v=txtv0;to=https://about.txtdirect.org/hosted;type=host;code=302"
+_redirect.hosted.s.txtdirect.org   86400 IN TXT     "v=txtv0;type=host;code=302;to=https://about.txtdirect.org/hosted"
 ```
 
 Path redirect uses two different types.  
