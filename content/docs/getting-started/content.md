@@ -29,12 +29,12 @@ After running the command, you can find the binary file in your `$GOPATH/bin` di
 
 ## Install with Docker
 
-You can check the list of available Docker images on [c.txtdirect.org](http://c.txtdirect.org)
+You can check the list of available Docker images on [c.txtdirect.org/txtdirect](https://c.txtdirect.org/txtdirect)
 
 Use the following command with the version of your choice:
 
 ```
-$ docker pull c.txtdirect.org:v0.4.0
+$ docker pull c.txtdirect.org/txtdirect:v0.4.0
 ```
 
 ## Run TXTDirect
@@ -47,4 +47,4 @@ Run an TXTDirect instance using the following command:
 $ txtdirect -conf CONFIG_FILE
 ```
 
-CONFIG_FILE is the path to your config file and also note that the mentioned command should be runned where the TXTDirect binary is located.
+CONFIG_FILE is the path to your config file.
