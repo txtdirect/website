@@ -14,8 +14,12 @@ disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
 date = ["date", "lastmod"]
 lastmod = ["lastmod", ":git", "date"]
 
-pygmentsCodeFences = true 
 DefaultContentLanguage = "en"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+     unsafe = true
 
 [params]
   name = "Okkur Labs"
