@@ -13,7 +13,7 @@ _The specification can be considered stable, but slight changes might happen in 
 
 # General Requirements
 
-**TXT record**
+## TXT record
 
 - Record must not exceed 255 characters
 - Record key-value pairs must be delimited by semicolons ";"
@@ -22,11 +22,11 @@ _The specification can be considered stable, but slight changes might happen in 
 - Ordering key-value pairs can be done
 - Arbitrary data/non key-value pairs can be used and will be ignored
 
-**Location/Zone**
+## Location/Zone
 
 - TXT record must be accessible under the subdomain "\_redirect"
 
-**URLs**
+## URLs
 
 - All URLs must be encoded
 - ";" must be escaped as "%3B"
@@ -42,6 +42,17 @@ https://example.com/page/about=us -> https://example.com/page/about%3Dus
 Further links about URL encoding:  
 https://en.wikipedia.org/wiki/Percent-encoding  
 https://tools.ietf.org/html/rfc3986#page-11
+
+## Multipart Records
+
+TXT records that are longer than 255 characters should be split into multiple parts.
+As mentioned in [RFC4408](https://tools.ietf.org/html/rfc4408), "A single text DNS record can be composed of more than one string.
+If a published record contains multiple strings, then the record MUST be treated as if those strings are concatenated together without adding spaces".
+Example:
+
+```
+_redirect.multipart.example.com     3600 IN TXT    "v=txtv0;type=host" "code=301" "to=https://txtdirect.org"
+```
 
 ---
 
@@ -329,7 +340,7 @@ The `proxy` type let's you proxy your requests to a specific upstream. It reads 
 
 A wildcard DNS record is a record in a DNS zone that will match requests for non-existent domain names. For example you can specifiy a record that matches all the subdomains that don't have a specific TXT record.
 
-*NOTE: Using a CNAME record for the wildcard is not supported and will lead to wrong behaviour*
+_NOTE: Using a CNAME record for the wildcard is not supported and will lead to wrong behaviour_
 
 Take a look at these sample records:
 
