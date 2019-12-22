@@ -45,13 +45,13 @@ https://tools.ietf.org/html/rfc3986#page-11
 
 ## Multipart Records
 
-TXT records that are longer than 255 characters should be splited into multiple parts. As mentioned in [RFC4408](https://tools.ietf.org/html/rfc4408), "A single text DNS record can be composed of more than one string. If a published record contains multiple strings, then the record MUST be treated as if those strings are concatenated together without adding spaces".
-Since multipart TXT records don't have a standard way for sorting, TXTDirect uses the `p=` field to determine the place of each part.  
-All the parts except the first part should start with the `p=` field.
+TXT records that are longer than 255 characters should be split into multiple parts.
+As mentioned in [RFC4408](https://tools.ietf.org/html/rfc4408), "A single text DNS record can be composed of more than one string.
+If a published record contains multiple strings, then the record MUST be treated as if those strings are concatenated together without adding spaces".
 Example:
 
 ```
-_redirect.multipart.example.com     3600 IN TXT    "v=txtv0;type=host" "p=3;code=301" "p=2;to=https://txtdirect.org"
+_redirect.multipart.example.com     3600 IN TXT    "v=txtv0;type=host" "code=301" "to=https://txtdirect.org"
 ```
 
 ---
