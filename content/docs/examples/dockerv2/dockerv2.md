@@ -9,30 +9,34 @@ title = "Dockerv2"
   enable = true
 +++
 
-__Currently Docker hub is not supported__
-__Only publicly available containers are currently supported__
+**Currently Docker hub is not supported**
+**Only publicly available containers are currently supported**
 
-## Dockerv2
+# Dockerv2
+
 **Container vanity redirect**  
-*container.example.com/txtdirect -> gcr.io/some/container*
-*container.example.com/txtdirect:tag -> gcr.io/some/container:tag*
+_container.example.com/txtdirect -> gcr.io/some/container_
+_container.example.com/txtdirect:tag -> gcr.io/some/container:tag_
+
 ```
 container.example.com             3600 IN CNAME  txtdirect.example.com
 _redirect.container.example.com   3600 IN TXT    "v=txtv0;type=dockerv2;to=https://gcr.io/some/container"
 ```
 
 **Container vanity redirect with enforced tag**  
-*container.example.com/txtdirect -> gcr.io/some/container:tag*  
-*container.example.com/txtdirect:123 -> gcr.io/some/container:tag*
+_container.example.com/txtdirect -> gcr.io/some/container:tag_  
+_container.example.com/txtdirect:123 -> gcr.io/some/container:tag_
+
 ```
 container.example.com             3600 IN CNAME  txtdirect.example.com
 _redirect.container.example.com   3600 IN TXT    "v=txtv0;type=dockerv2;to=https://gcr.io/some/container:tag"
 ```
 
 **Full platform container vanity redirects**  
-*gcr.example.com/some/container -> gcr.io/some/container*  
-*gcr.example.com/some/container:tag -> gcr.io/some/container:tag*  
-*gcr.example.com/\* -> gcr.io/\**
+_gcr.example.com/some/container -> gcr.io/some/container_  
+_gcr.example.com/some/container:tag -> gcr.io/some/container:tag_  
+\*gcr.example.com/\* -> gcr.io/\*\*
+
 ```
 gcr.example.com             3600 IN CNAME  txtdirect.example.com
 _redirect.gcr.example.com   3600 IN TXT    "v=txtv0;type=dockerv2;to=https://gcr.io"
