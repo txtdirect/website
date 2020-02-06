@@ -118,9 +118,9 @@ If a custom regex is configured with the `re=` field each match is used as a sub
 
 ## Wildcards
 
-If a specific record is non existent it will fallback to a wildcard record, if available.
+If a specific record is non-existent it will fallback to a wildcard record, if available.
 Wildcard records can be set using `_` such as `_redirect._.path.example.com`.  
-_For non existent zones or catch-all use-cases a [general wildcard](#wildcard-records) can be used._
+_For non-existent zones or catch-all use-cases a [general wildcard](#wildcard-records) can be used._
 
 For example look at these sample records:
 
@@ -149,9 +149,9 @@ _redirect._.second.path.example.test.      IN TXT "v=txtv0;type=host;code=302;to
 _redirect._._.path.example.test.      IN TXT "v=txtv0;type=host;code=302;to=https://nothing.example.test"
 ```
 
-Now if the incoming requst's path is `/first/second` it would use the `_redirect._.second.path.example.test` record and get redirected to `https://second.example.test`. That's because we used the `/$2/$1` regex for the parent path record's `from=` field. Also if the request's path is `/second/first` it would use the `_redirect._.first.path.example.test` record.
+Now if the incoming request's path is `/first/second` it would use the `_redirect._.second.path.example.test` record and get redirected to `https://second.example.test`. That's because we used the `/$2/$1` regex for the parent path record's `from=` field. Also if the request's path is `/second/first` it would use the `_redirect._.first.path.example.test` record.
 
-If the request's path is neither of those cases, it would then use the last wildcard record. So if the requet's path for example is `/not/available`, it would use the `_redirect._._.path.example.test` record and get redirected to `https://nothing.example.test`.
+If the request's path is neither of those cases, it would then use the last wildcard record. So if the request's path for example is `/not/available`, it would use the `_redirect._._.path.example.test` record and get redirected to `https://nothing.example.test`.
 
 ## Record Fields
 
@@ -236,7 +236,7 @@ The upstream endpoint used for `to=` can be different depending on the use case.
 - Key: **to**
 - Mandatory
 - Permitted values: "absolute registry URL"
-- Note: "For non container traffic it will fallback to _website_, _www_ or _redirect_ config"
+- Note: "For non-container traffic it will fallback to _website_, _www_ or _redirect_ config"
 - Example: "to=https://gcr.io/" _pass through namespaces, container and tag_
 - Example: "to=https://gcr.io/txtdirect/container" _pass through tag_
 - Example: "to=https://gcr.io/txtdirect/container:tag" _force specific tag_
@@ -338,7 +338,7 @@ The `proxy` type let's you proxy your requests to a specific upstream. It reads 
 
 # Wildcard Records
 
-A wildcard DNS record is a record in a DNS zone that will match requests for non-existent domain names. For example you can specifiy a record that matches all the subdomains that don't have a specific TXT record.
+A wildcard DNS record is a record in a DNS zone that will match requests for non-existent domain names. For example you can specify a record that matches all the subdomains that don't have a specific TXT record.
 
 _NOTE: Using a CNAME record for the wildcard is not supported and will lead to wrong behaviour_
 
@@ -365,3 +365,27 @@ The redirect flow for these records would look like this:
 specific.example.test -> http://specific.test
 *.example.test        -> http://wildcard.test
 ```
+
+# Custom Headers
+
+Custom headers can be added to the responses with specifing them inside the records. For example to add a HSTS header to the responses you can use the following example:
+
+```
+_redirect.example.test.   IN TXT "v=txtv0;type=host;to=http://example.test;>Strict-Transport-Security=>Strict-Transport-Security=max-age%3D163072000%3B%20includeSubDomains%3B%20preload"
+```
+
+You can separate the headers just like the other record fields by using `;`.  
+Also the custom headers would get added to the records that are chained to a `path` record. For example:
+
+```
+"_redirect.example.test.": "v=txtv0;type=path;>Test=TestValue"
+"_redirect.second.example.test.": "v=txtv0;type=host;to=https://example.test"
+```
+
+The `second.example.test` record would also have the `Test` header in this example.
+
+**Important Note:** Since headers can contain characters that can interrupt the
+record parser, [urlencoding](https://en.wikipedia.org/wiki/Percent-encoding) is required for the header values.
+
+Also custom headers will overwrite the previous headers that were added to the
+responses. like the headers from the Caddyfile.
