@@ -371,7 +371,7 @@ specific.example.test -> http://specific.test
 Custom headers can be added to the responses with specifing them inside the records. For example to add a HSTS header to the responses you can use the following example:
 
 ```
-_redirect.example.test.   IN TXT "v=txtv0;type=host;to=http://example.test;>Strict-Transport-Security=max-age%3D63072000%3B+includeSubDomains%3B+preload+"
+_redirect.example.test.   IN TXT "v=txtv0;type=host;to=http://example.test;>Strict-Transport-Security=>Strict-Transport-Security=max-age%3D163072000%3B%20includeSubDomains%3B%20preload"
 ```
 
 You can separate the headers just like the other record fields by using `;`.  
