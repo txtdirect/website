@@ -64,5 +64,5 @@ txtdirect {
 }
 ```
 
-Supported values are `stdout`, `stderr` or path to a file. If empty, logs will get
+Supported values are `stdout`, `stderr` or a file path. If empty, logs will get
 discarded and written to `/dev/null`.

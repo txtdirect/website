@@ -1,4 +1,4 @@
 +++
-title = "Path with Other"
+title = "Path with other types"
 weight = 200
 +++

@@ -9,7 +9,7 @@ weight = 100
 
 TXTDirect uses [Caddy's](https://caddyserver.com) config controller so all the config files should follow the [Caddyfile syntax](https://caddyserver.com/v1/tutorial/caddyfile) rules.
 
-TXTDirect's reads its config from the `txtdirect` scope in the Caddyfile. So for example, using the following config you can tell TXTDirect to enable the `host` redirect type on `example.com` host and write the logs to `stdout`:
+TXTDirect's reads its config from the `txtdirect` scope in the Caddyfile. For example, using the following config you can tell TXTDirect to enable the `host` redirect type on the `example.com` host and write the logs to `stdout`:
 
 ```
 example.com:8080 {
@@ -39,7 +39,7 @@ These features are documented in separate sections that you can find using the m
 
 ## CLI Flags
 
-Use the `-conf` flag to pass the config file to TXTDirect like this example:
+Use the `-conf` flag to pass a config file to TXTDirect.
 
 ```
 $ txtdirect -conf PATH_TO_CONFIG

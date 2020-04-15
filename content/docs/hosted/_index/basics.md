@@ -31,7 +31,7 @@ Note: Keep in mind that `CNAME` records only work on subdomains, so if you want
 to redirect the incoming requests to your root record, you have to add `A` and
 `AAAA` records to your zone file.
 
-The records for root redirect should look like this:
+The records for a root redirect should look like this:
 
 ```
 example.com             86000 IN A       45.85.238.5
@@ -60,6 +60,6 @@ you have to point each domain to `txtd.io` before writing its TXT records like
 the examples above.
 
 Take a look at the [Basic Configuration](/docs/config/basics/) page to learn
-more about TXTDirect's types and how they work. And [Specification](/docs/specification) page to read about the available types. And the
-[Record Examples](/docs/examples) provides a set of examples for each type and
+more about TXTDirect's types and how they work. The [Specification](/docs/specification) page details the available types. Additional
+[Record Examples](/docs/examples) give some ideas for each type and
 more complex examples like combining the types.
