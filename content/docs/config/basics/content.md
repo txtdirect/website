@@ -9,11 +9,11 @@ title = "Basics"
   sticky = true
 +++
 
-# Enable types
+# Configuring types
 
 ---
 
-## Enable single type
+Enable a single type:
 
 ```
 txtdirect {
@@ -21,7 +21,7 @@ txtdirect {
 }
 ```
 
-## Enable multiple types
+Enable multiple types:
 
 ```
 txtdirect {
@@ -29,7 +29,7 @@ txtdirect {
 }
 ```
 
-## Disable specific type
+Disable a specific type:
 
 ```
 txtdirect {
@@ -42,8 +42,6 @@ txtdirect {
 ---
 
 To use a custom DNS resolver instead of the machine's default resolver, you can provide the `resolver` address in the config.
-
-## Config
 
 ```
 txtdirect {

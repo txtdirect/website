@@ -39,17 +39,17 @@ example.com             86000 IN AAAA    2a0e:c885:5::1
 ```
 
 Now that the `CNAME` or `A` records are setup, you can start adding the `TXT`
-records. For example, to redirect the requests for `git.example.com` to
-`github.com/example`, you can add the following records to your zone file.
+records. For example, to redirect the requests for `twitter.example.com` to
+`twitter.com/example`, you can add the following records to your zone file.
 
 ```
-git.example.com             86000 IN CNAME   txtd.io.
-_redirect.git.example.com   86000 IN TXT     "v=txtv0;type=host;to=https://github.com/example"
+twitter.example.com             86000 IN CNAME   txtd.io.
+_redirect.twitter.example.com   86000 IN TXT     "v=txtv0;type=host;to=https://twitter.com/example"
 ```
 
-So the example above points `git.example.com` to TXTDirect's servers and when
-TXTDirect receives a request for `git.example.com`, it will look for a `TXT`
-record with the `_redirect.git.example.com` address. Then it will redirect the
+So the example above points `twitter.example.com` to TXTDirect's servers and when
+TXTDirect receives a request for `twitter.example.com`, it will look for a `TXT`
+record with the `_redirect.twitter.example.com` address. Then it will redirect the
 requests based on the `TXT` record's type and endpoint, which in case of this
 example, it redirects the requests without any additional check and logic to
 the endpoint specified in the `to=` field.

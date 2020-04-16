@@ -35,7 +35,8 @@ example.com:8080 {
 }
 ```
 
-These features are documented in separate sections that you can find using the menu on left side of the page.
+These features are documented in more detail in separate sections within our
+[documentation](/docs) under the configuration category.
 
 ## CLI Flags
 

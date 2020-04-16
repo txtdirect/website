@@ -22,19 +22,19 @@ _redirect.baz.pkg.example.com       3600 IN TXT    "v=txtv0;type=host;to=https:/
 ```
 
 Using these records we can setup the following redirects:  
-**pkg.example.com/foo -> https://github.com/foo/foo**  
-**pkg.example.com/bar -> https://github.com/foo/bar**  
-**pkg.example.com/baz -> https://gcr.io/foo/baz**
+**pkg.example.com/foo -> `https://github.com/foo/foo`**  
+**pkg.example.com/bar -> `https://github.com/foo/bar`**  
+**pkg.example.com/baz -> `https://github.com/foo/baz/blob/master/README.md#deprecated`**
 
 But these redirects are not just simple redirects because we've used `gometa` and
 `host` types in this example. To learn more about what each type can do
 check out the full [specification](/docs/specification).
 
-We can use the records from the example above in `go get` command and the
-Docker CLI. For example, we can use them like this:
+We can use the records from the example above in `go get` and
+cURL commands. For example, we can use them like this:
 
 ```
 $ go get pkg.example.com/foo
 $ go get pkg.example.com/bar
-$ docker pull pkg.example.com/baz
+$ curl -v pkg.example.com/baz
 ```

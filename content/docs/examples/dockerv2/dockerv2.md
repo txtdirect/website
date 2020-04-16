@@ -9,8 +9,8 @@ title = "Dockerv2"
   enable = true
 +++
 
-**Currently Docker hub is not supported**
-**Only publicly available containers are currently supported**
+**Currently Docker hub is not supported and only publicly available containers are supported**  
+**This type is in experimental state**
 
 # Dockerv2
 
