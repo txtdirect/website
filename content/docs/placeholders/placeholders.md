@@ -140,4 +140,18 @@ subtitle= "TXTDirect supports various placeholders. These can be used to create 
   [[rows.values]]
     text = "The username authorized by basicauth (HTTP Basic Authentication)"
 
+[[rows]]
+  [[rows.values]]
+    text = "**{N}**"
+
+  [[rows.values]]
+    text = "Regex matches from the request's path. like: {2}, {4}"
+
+[[rows]]
+  [[rows.values]]
+    text = "**{GROUP_NAME}**"
+
+  [[rows.values]]
+    text = "Named Regex matches from the request's path"
+
 +++

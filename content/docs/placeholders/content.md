@@ -27,15 +27,18 @@ matches after parsing the path to the placeholders so you can use them inside
 your records to have more dynamic redirects. For example, after parsing the
 `/test/path`, you can use the `{1}` and `{2}` placeholders to access the request
 path as placeholders. Each number represents a part of the parsed path and the
-order depends on the Regex that parsed the request path.
+order depends on the Regex that parsed the request path. By default, each path
+segment is a numbered placeholder and you can also find more details about the
+default regex in the `path` type's [specifications](/docs/specification/#path-type).
 
 ### Named Regex Placeholders
 
-Just like how the normal regex placeholders work, you can also use the regex
-group names instead of the order numbers inside your placeholder to use the
-regex matches in your records. For example, if the custom regex on a path
-record is `^/(?P<repo>[^/]*)(?P<subpath>/.*)?$`, you can use the `{repo}` and
-`{subpath}` placeholders inside the TXT records.
+If a custom regex specifies group names for the matches, the regex group names
+can be used instead of the order numbers inside your placeholder to use the
+regex matches in your records.  
+For example, if the custom regex on a path record is
+`^/(?P<repo>[^/]*)(?P<subpath>/.*)?$`, you can use the `{repo}` and `{subpath}`
+placeholders inside the TXT records.
 
 ## Host Label Placeholders
 
