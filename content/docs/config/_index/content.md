@@ -36,7 +36,7 @@ example.com:8080 {
 ```
 
 These features are documented in more detail in separate sections within our
-[documentation](/docs) under the configuration category.
+[documentation](/docs/config) under the configuration category.
 
 ## CLI Flags
 

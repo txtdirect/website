@@ -195,7 +195,7 @@ If the request's path is neither of those cases, it would then use the last wild
 
 - Key: **from**
 - Permitted values: "simplified regex"
-- Example: "from=/$2/$1/\$3"
+- Example: "from=/$2/$1/$3"
 
 **Regex**
 
