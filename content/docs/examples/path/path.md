@@ -8,10 +8,10 @@ title = "Path"
   enable = true
 +++
 
-## Path Type
 **Path redirect using default ordering**  
-*example.com/firstMatch/secondMatch -> about.example.com*
-*example.com/firstMatch/noMatch -> fallback or 404*
+_example.com/firstMatch/secondMatch -> about.example.com_
+_example.com/firstMatch/noMatch -> fallback or 404_
+
 ```
 example.com                                   3600 IN A      127.0.0.1
 _redirect.example.com                         3600 IN TXT    "v=txtv0;type=path"
@@ -19,8 +19,9 @@ _redirect.secondmatch.firstmatch.example.com  3600 IN TXT    "v=txtv0;type=host;
 ```
 
 **Path redirect using explicit ordering**  
-*example.com/firstMatch/secondMatch -> about.example.com*
-*example.com/firstMatch/noMatch -> fallback or 404*
+_example.com/firstMatch/secondMatch -> about.example.com_
+_example.com/firstMatch/noMatch -> fallback or 404_
+
 ```
 example.com                                   3600 IN A      127.0.0.1
 _redirect.example.com                         3600 IN TXT    "v=txtv0;type=path;from=/$1/$2/"
@@ -28,8 +29,9 @@ _redirect.secondmatch.firstmatch.example.com  3600 IN TXT    "v=txtv0;type=host;
 ```
 
 **Path redirect using modified ordering**  
-*example.com/firstMatch/secondMatch -> about.example.com*
-*example.com/firstMatch/noMatch -> defaults or 404*
+_example.com/firstMatch/secondMatch -> about.example.com_
+_example.com/firstMatch/noMatch -> defaults or 404_
+
 ```
 example.com                                   3600 IN A      127.0.0.1
 _redirect.example.com                         3600 IN TXT    "v=txtv0;type=path;from=/$2/$1/"
@@ -37,7 +39,8 @@ _redirect.firstmatch.secondmatch.example.com  3600 IN TXT    "v=txtv0;type=host;
 ```
 
 **Path redirect using path record fallback for root/index**  
-*example.com/ -> root.example.com*
+_example.com/ -> root.example.com_
+
 ```
 example.com                                   3600 IN A      127.0.0.1
 _redirect.example.com                         3600 IN TXT    "v=txtv0;type=path;from=/$1/$2;root=https://root.example.com"
@@ -45,16 +48,17 @@ _redirect.secondmatch.firstmatch.example.com  3600 IN TXT    "v=txtv0;type=host;
 ```
 
 **Path redirect using path record fallback**  
-*example.com/firstMatch/noMatch -> fallback.example.com*
+_example.com/firstMatch/noMatch -> fallback.example.com_
+
 ```
 example.com                                   3600 IN A      127.0.0.1
 _redirect.example.com                         3600 IN TXT    "v=txtv0;type=path;to=https://fallback.example.com"
 ```
 
 **Path redirect using wildcard**  
-*example.com/firstMatch/secondMatch -> about.example.com*
-*example.com/firstMatch/randomString -> wildcard.example.com*
-*example.com/randomString/randomString -> full-wildcard.example.com*
+_example.com/firstMatch/secondMatch -> about.example.com_
+_example.com/firstMatch/randomString -> wildcard.example.com_
+_example.com/randomString/randomString -> full-wildcard.example.com_
 
 ```
 example.com                                   3600 IN A      127.0.0.1

@@ -1,15 +1,13 @@
 +++
 fragment = "content"
-weight = 50
-
 title = "Record Examples"
+weight = 300
 
 [sidebar]
   enable = true
 +++
 
 TXTDirect is using DNS TXT records to store data and keeps you in control of your own data.
-
 
 In the examples "txtdirect.example.com" is your hosted TXTDirect instance.
 

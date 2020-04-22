@@ -107,6 +107,10 @@ Sometimes you may need to redirect a request coming into a single host/domain to
 
 `path` also contains some additional configuration to process the request's path. The `re=` field enables use of a custom regex to control which data is used to construct the sub zones, where TXT record data is fetched.
 
+`path` uses `\/([A-Za-z0-9-._~!$'()*+,;=:@]+)` as the default regex to parse
+the request's path. The matches from this regex would get used to construct the sub zones
+and they're also available as numbered regex [placeholders](/docs/placeholders).
+
 ### Path Sanitization
 
 To use the request's path for generating the zone address it needs to be normalized into allowed DNS chars. For example `.`(dot) is replaced with `-`(dash) to keep each match in its own zone. You can visit [RFC1034](https://tools.ietf.org/html/rfc1034) for more information about the allowed chars.
