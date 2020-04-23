@@ -54,6 +54,15 @@ Example:
 _redirect.multipart.example.com     3600 IN TXT    "v=txtv0;type=host" "code=301" "to=https://txtdirect.org"
 ```
 
+## Cache Headers
+
+TXTDirect adds an `Cache-Control` header with duration of 1 week by default
+to all `301` redirects.
+Since a `301` status code is for permanent redirects, most clients might
+not refresh their cache without specifying an `Cache-Control` header on `301` redirects.  
+It's recommended to always add a `Cache-Control` header with at least a duration of a day
+or a week to all `301` redirects.
+
 ---
 
 # Host Type
