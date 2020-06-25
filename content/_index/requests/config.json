@@ -1,94 +1,98 @@
 {
-    "type": "line",
-    "data": {
-      "labels": [
-        "Sep 18",
-        "Oct 18",
-        "Nov 18",
-        "Dec 18",
-        "Jan 19",
-        "Feb 19",
-        "Mar 19",
-        "Apr 19",
-        "May 19",
-        "Jun 19",
-        "Jul 19",
-        "Aug 19",
-        "Sep 19",
-        "Oct 19",
-        "Nov 19",
-        "Dec 19",
-        "Jan 20",
-        "Feb 20",
-        "Mar 20"
+  "type": "line",
+  "data": {
+    "labels": [
+      "Sep 18",
+      "Oct 18",
+      "Nov 18",
+      "Dec 18",
+      "Jan 19",
+      "Feb 19",
+      "Mar 19",
+      "Apr 19",
+      "May 19",
+      "Jun 19",
+      "Jul 19",
+      "Aug 19",
+      "Sep 19",
+      "Oct 19",
+      "Nov 19",
+      "Dec 19",
+      "Jan 20",
+      "Feb 20",
+      "Mar 20",
+      "Apr 20",
+      "May 20"
+    ],
+    "datasets": [
+      {
+        "label": "Requests (million)",
+        "data": [
+          0.71,
+          0.82,
+          1.15,
+          1.4,
+          1.5,
+          1.6,
+          1.96,
+          2.2,
+          2.8,
+          3.8,
+          3.9,
+          5.1,
+          6.0,
+          6.3,
+          7.1,
+          8.0,
+          9.2,
+          9.4,
+          9.5,
+          11.1,
+          12.3
         ],
-      "datasets": [
+        "backgroundColor": "#00838f",
+        "borderColor": "#f8f9fa",
+        "borderWidth": 1
+      }
+    ]
+  },
+  "options": {
+    "legend": {
+      "display": false
+    },
+    "tooltips": {
+      "displayColors": false,
+      "backgroundColor": "#f8f9fa",
+      "titleFontColor": "#000",
+      "bodyFontColor": "#000"
+    },
+    "scales": {
+      "yAxes": [
         {
-          "label": "Requests (million)",
-          "data": [
-            0.71,
-            0.82,
-            1.15,
-            1.40,
-            1.50,
-            1.60,
-            1.96,
-            2.20,
-            2.80,
-            3.80,
-            3.90,
-            5.10,
-            6.00,
-            6.30,
-            7.10,
-            8.00,
-            9.20,
-            9.40,
-            9.50
-          ],
-          "backgroundColor": "#00838f",
-          "borderColor": "#f8f9fa",
-          "borderWidth": 1
+          "gridLines": {
+            "color": "#6c757d"
+          },
+          "ticks": {
+            "beginAtZero": false,
+            "fontColor": "#fff"
+          },
+          "scaleLabel": {
+            "display": true,
+            "labelString": "Requests per month (million)",
+            "fontColor": "#fff"
+          }
+        }
+      ],
+      "xAxes": [
+        {
+          "gridLines": {
+            "color": "#6c757d"
+          },
+          "ticks": {
+            "fontColor": "#fff"
+          }
         }
       ]
-    },
-    "options": {
-      "legend": {
-        "display": false
-      },
-      "tooltips": {
-        "displayColors": false,
-        "backgroundColor": "#f8f9fa",
-        "titleFontColor": "#000",
-        "bodyFontColor": "#000"
-      },
-      "scales": {
-        "yAxes": [
-          {
-            "gridLines": {
-              "color": "#6c757d"
-            },
-            "ticks": {
-              "beginAtZero": false,
-              "fontColor": "#fff"
-            },
-            "scaleLabel": {
-              "display": true,
-              "labelString": "Requests per month (million)",
-              "fontColor": "#fff"
-            }
-          }
-        ],
-        "xAxes": [
-          {
-            "gridLines": {
-              "color": "#6c757d"
-            },
-            "ticks": {
-              "fontColor": "#fff"
-            }
-          }
-        ]
-      }
     }
   }
+}
